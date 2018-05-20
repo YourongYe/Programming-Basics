@@ -78,3 +78,6 @@ C++(virtual inheritance) Python ("Method Resolution Order" MRO)
 not really. python has GIL (lock). Solution(Cpython, multiprocessing)
 
 
+2.Deadlock or not? 
+Check PID, Check heartbeat
+
