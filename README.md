@@ -5,20 +5,31 @@
 
 2.Member variables
 
-3.Class Methods
+3.Class Methods (functions)
 
-4.Constructor and Destructor
+4.Public, Protected and Private
 
-5.Virtual function
+5.Constructor and Destructor
 
-6.Difference between override and overload
+6.Virtual function
 
-7.polymophysm
+7.Difference between override and overload
 
-8.Diamond Inheritance
+8.polymophysm
+
+9.Diamond Inheritance
 
 # Python specifics
 ### OO programming
+1.Class Attributes
+
+2.Static and Class Method
+
+3.Properties
+
+4.Slot
+
+5.“With” Statement
 
 ### data structures
 1.List Deepcopy
