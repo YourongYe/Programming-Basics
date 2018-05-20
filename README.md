@@ -1,11 +1,14 @@
 # ToDoList
 
 # General programming
-1.Pass by reference vs pass by value
 
-2.Recursion vs Iteration
+1.Interpreted and Compiled language
 
-3.Integer
+2.Pass by reference vs pass by value
+
+3.Recursion vs Iteration
+
+4.Integer
 
 # Object-oriented programming 
 1.Class
