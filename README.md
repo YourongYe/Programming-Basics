@@ -67,3 +67,10 @@
 (2)Hash table real size (buffering)
 
 (3)Collision (How hash table avoids collisions?)
+
+# Multithreading
+1.Python multithreading? 
+
+not really. python has GIL (lock). Solution(Cpython, multiprocessing)
+
+
