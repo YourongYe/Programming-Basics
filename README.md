@@ -1,6 +1,6 @@
 # ToDoList
 
-### Object-oriented programming 
+# Object-oriented programming 
 1.Class
 
 2.Member variables
@@ -17,15 +17,15 @@
 
 8.Diamond Inheritance
 
-### Python specifics
-#### OO programming
+# Python specifics
+### OO programming
 
-#### data structures
+### data structures
 1.List Deepcopy
 
 2.List Comprehensions 
 
-### Data Structures
+# Data Structures
 1.Array vs Linked-list
 
 2.Hashtable
