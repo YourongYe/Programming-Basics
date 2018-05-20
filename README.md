@@ -3,6 +3,10 @@
 # General programming
 1.Pass by reference vs pass by value
 
+2.Recursion vs Iteration
+
+3.Integer
+
 # Object-oriented programming 
 1.Class
 
