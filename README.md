@@ -4,6 +4,10 @@
 
 1.Interpreted and Compiled language
 
+Python (interpreted) C++ (Compiled)
+
+Can python be also compiled?
+
 2.Pass by reference vs pass by value
 
 3.Recursion vs Iteration
