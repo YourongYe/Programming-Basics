@@ -7,6 +7,8 @@
 
 3.polymophysm
 
+4.Diamond Inheritance
+
 ### Python specifics
 1.List Deepcopy
 
