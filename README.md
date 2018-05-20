@@ -25,16 +25,20 @@
 
 2.Static and Class Method
 
-3.Properties
+4.Decorator
 
-4.Slot
+5.Properties
 
-5.“With” Statement
+6.Slot
+
+7.“With” Statement
 
 ### data structures
 1.List Deepcopy
 
-2.List Comprehensions 
+2.Lambda, map, reduce and filter
+
+3.List Comprehensions 
 
 # Data Structures
 1.Array vs Linked-list
