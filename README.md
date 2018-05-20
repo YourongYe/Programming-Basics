@@ -35,6 +35,8 @@
 
 10.Diamond Inheritance
 
+C++(virtual inheritance) Python ("Method Resolution Order" MRO)
+
 # Python specifics
 
 ### OO programming
