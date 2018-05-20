@@ -24,15 +24,7 @@
 
 8.polymophysm
 
-9.Object-oriented Concepts:
-
-(1)Encapsulation 
-
-(2)Inheritance 
-
-(3)Polymorphism 
-
-(4)Abstraction
+9.Object-oriented Concepts: (1)Encapsulation (2)Inheritance (3)Polymorphism (4)Abstraction
 
 10.Diamond Inheritance
 
