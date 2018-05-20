@@ -46,9 +46,11 @@
 
 5.Properties
 
-6.Slot
+6.Iterator vs Generator
 
-7.“With” Statement
+7.Slot
+
+8.“With” Statement
 
 ### data structures
 1.List Deepcopy
