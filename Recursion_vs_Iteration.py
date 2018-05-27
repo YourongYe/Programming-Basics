@@ -48,6 +48,6 @@ time_end=time.time()
 print("fib_recursive_memo time:",time_end-time_start)
 
 time_start=time.time()
-print("fib_iteration result：",fib_iteration(10))
+print("fib_iteration result:",fib_iteration(10))
 time_end=time.time()
 print("fib_iteration time:",time_end-time_start)
