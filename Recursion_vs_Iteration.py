@@ -1,13 +1,23 @@
 import time
 
-def fib(n):
+def fib_recursive(n):
     if n <= 1:
 	    return 0
     if n == 2:
 	    return 1
-    return fib(n-1)+fib(n-2)
+    return fib_recursive(n-1)+fib_recursive(n-2)
 
-def fib2(n):
+def fib_recursive_memo(n,dic):
+    if n <= 1:
+	    return 0
+    if n == 2:
+	    return 1
+
+    if n not in dic:
+      dic[n] = fib_recursive_memo(n-1,dic)+fib_recursive_memo(n-2,dic)
+    return dic[n]
+
+def fib_iteration(n):
     if n <= 1:
         return 0
     if n == 2:
@@ -25,11 +35,17 @@ def fib2(n):
     return next
    
 time_start=time.time()
-print(fib(40))
+print(fib_recursive(30))
 time_end=time.time()
-print(time_end-time_start)
+print("fib_recursive time:",time_end-time_start)
 
 time_start=time.time()
-print(fib2(40))
+dic = {}
+print(fib_recursive_memo(30,dic))
 time_end=time.time()
-print(time_end-time_start)
+print("fib_recursive_memo time:",time_end-time_start)
+
+time_start=time.time()
+print(fib_iteration(30))
+time_end=time.time()
+print("fib_iteration time:",time_end-time_start)
