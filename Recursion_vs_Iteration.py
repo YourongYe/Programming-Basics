@@ -51,3 +51,21 @@ time_start=time.time()
 print("fib_iteration result:",fib_iteration(10))
 time_end=time.time()
 print("fib_iteration time:",time_end-time_start)
+
+
+###############################################
+# Simple recursive vs iteration
+###############################################
+def loop_recur(n):
+  if n == 0:
+    return
+
+  loop_recur(n-1)
+  print(n)
+
+def loop_iter(n):
+  for i in range(1,n+1):
+    print(i)
+
+loop_recur(10)
+loop_iter(10)
