@@ -37,17 +37,17 @@ def fib_iteration(n):
     return next
    
 time_start=time.time()
-print(fib_recursive(10))
+print("fib_recursive result:",fib_recursive(10))
 time_end=time.time()
 print("fib_recursive time:",time_end-time_start)
 
 time_start=time.time()
 dic = {}
-print(fib_recursive_memo(10,dic))
+print("fib_recursive_memo result:",fib_recursive_memo(10,dic))
 time_end=time.time()
 print("fib_recursive_memo time:",time_end-time_start)
 
 time_start=time.time()
-print(fib_iteration(10))
+print("fib_iteration result：",fib_iteration(10))
 time_end=time.time()
 print("fib_iteration time:",time_end-time_start)
