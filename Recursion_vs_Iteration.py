@@ -74,9 +74,10 @@ loop_iter(10)
 
 #Stack：
 # 内存：目前学到的东西都是存在stack里，在一个function里面，一个int会占用一个空间，一个function也会占用空间，出了这个function，在function内部的int
-#所占用的空间就会被释放,释放空间的顺序是从下到上的。所以stack是first in last out的储存在释放空间的方式。
+#所占用的空间就会被释放,释放空间的顺序是从下到上的。所以stack是first in last out的储存和释放空间的方式。
 # 用stack就可以解释为什么iteration会比recursion更好。以上面的loop为例，因为recursion要call自己的function，所以每call一次都要占用一个空间，而且
-#recursion是一层套一层的，最开始call的function要等最后call的function被return了才能依次倒着return出来，就会很慢。
+#recursion是一层套一层的，最开始call的function要等最后call的function被return了才能依次倒着return出来，就是说只有当最后一个被call的function
+#被return之后，function所占用的空间才能一次逐个被释放，所以就会很慢。
 # 如果recursion次数太多，就会出现stack overflow
 
 
