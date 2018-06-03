@@ -18,10 +18,14 @@ public:
 
 int main(){
   
+  //a1 constructed
   A a1(1);
   
-  {
+  { 
+    //a2 constructed
     A a2(2);
-  }
-}
+  }//a2 destructed
+  
+  
+}//a1 destructed
 ```
