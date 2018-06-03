@@ -1,9 +1,9 @@
 # OO四天王
-# polymorphism, virtual function, overload, abstract class
+# polymorphism, virtual function, override, abstract class
 加一个额外的抽象类(abstract class),这四个概念通常都是一起出现的  
 polymorphism  
 virtual function  
-overload  
+override  
 abstract class  
 
 ### 以下是例子
@@ -31,10 +31,12 @@ class Animal(ABC):
 
 #以下是继承Animal的class
 class Cat(Animal):
+  #这里就是对base class的virtual function的override
   def talk(self):
     return 'Meow!'
 
 class Dog(Animal):
+  #这里就是对base class的virtual function的override
   def talk(self):
     return 'Woof! Woof!'
 
