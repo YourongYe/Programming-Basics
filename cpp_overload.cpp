@@ -13,7 +13,7 @@ int add(int a, int b, int c){
 }
 
 std::string add(std::string a, std::string b, std::string c){
-    return a+b+c;
+    return a+"+"+b+"+"+c;
 }
 
 int main()
