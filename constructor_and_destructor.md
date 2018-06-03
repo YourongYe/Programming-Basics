@@ -22,14 +22,15 @@ int main(){
   A a1(1);
   
   { 
-    //a2 constructed
+    //a2,3 constructed
     A a2(2);
-  }//a2 destructed
+    A a3(3);
+  }//a2,3 destructed
   
   if(true){
-    //a3 constructed
-    A a3(3);
-  }//a3 destructed
+    //a4 constructed
+    A a4(4);
+  }//a4 destructed
   
   
 }//a1 destructed
