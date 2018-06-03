@@ -26,6 +26,11 @@ int main(){
     A a2(2);
   }//a2 destructed
   
+  if(true){
+    //a3 constructed
+    A a3(3);
+  }//a3 destructed
+  
   
 }//a1 destructed
 ```
