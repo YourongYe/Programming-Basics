@@ -1,5 +1,5 @@
 # OO四天王
-# polymorphism virtual function, overload, abstract class
+# polymorphism, virtual function, overload, abstract class
 加一个额外的抽象类(abstract class),这四个概念通常都是一起出现的
 polymorphism
 virtual function
