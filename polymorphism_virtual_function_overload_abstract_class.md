@@ -6,12 +6,15 @@ virtual function
 override  
 abstract class  
 
+整理上看, 首先你要写一个abstract class, 里面有一个virtual function;   
+然后, derived class去继承这个abstract base class, 同时override base class里的virtual function;  
+最后在run time的时候(跑程序的时候), override后的function被call的时候, 体现出不同的功能, 这时候就是polymorphism的体现.   
+
 ### 以下是例子
 
 ```python
 #ABC是abstract class的简写
 from abc import ABC, abstractmethod
-
 
 class Animal(ABC):
   def __init__(self, n): # Constructor of the class
