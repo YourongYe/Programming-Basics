@@ -31,9 +31,11 @@
 
 8.polymophysm
 
-9.Object-oriented Concepts: (1)Encapsulation (2)Inheritance (3)Polymorphism (4)Abstraction
+9.virtual table
 
-10.Diamond Inheritance
+10.Object-oriented Concepts: (1)Encapsulation (2)Inheritance (3)Polymorphism (4)Abstraction
+
+11.Diamond Inheritance
 
 C++(virtual inheritance) Python ("Method Resolution Order" MRO)
 
