@@ -32,6 +32,9 @@ class Animal(ABC):
   def talk(self): # Abstract method, defined by convention only
     pass
 
+  def myname(self):
+    return "my name is "+self.name
+
 #以下是继承Animal的class
 class Cat(Animal):
   #这里就是对base class的virtual function的override
@@ -51,5 +54,7 @@ Dog('Lassie')]
 #就是你有一个list, 你知道它存着不同类型的derived class obj, 比如有猫有狗, 但是只有在run time, 你才知道这个obj是猫还是狗
 #然后在run time的时候, 你call这个obj的virtual function(talk)的时候, 它能出现基于derived class定义的不同的行为, 这就是多态的表现
 for animal in animals:
-  print(animal.name + ': ' + animal.talk())
+  print(animal.myname() + ': ' + animal.talk())
+
+#what = Animal("impossible")
 ```
