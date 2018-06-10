@@ -64,3 +64,9 @@ int main(){
     delete a_ptr;
 }
 ```
+
+### TODO: pointer of an array
+
+### pass by ref, pointer, and value
+
+### polymorphysm
