@@ -67,6 +67,6 @@ int main(){
 
 ### TODO: pointer of an array
 
-### pass by ref, pointer, and value
+### TODO: pass by ref, pointer, and value
 
-### polymorphysm
+### TODO: polymorphysm
