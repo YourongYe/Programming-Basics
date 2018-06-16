@@ -22,13 +22,14 @@
     obj.static_method('name')
  
  
- # 三种方法都可以被实例调用，但是static method 和 class method 不能访问实例方法（属性），只有普通方法才可以调用实例属性
-    #result
+ # Result
     instance name
     class name
     name
+
+conclusion: 三种方法都可以被实例调用，但是static method 和 class method 不能访问实例方法（属性），只有普通方法才可以调用实例属性
  
- # 只有static method和class method可以被类名调用，而普通方法被类名调用时会报错
+ # Test2
     test.class_method('name')
     test.static_method('name')
     #test.normalmethod('name')
@@ -36,3 +37,5 @@
     #result:
     class name
     name
+
+conclusion: 只有static method和class method可以被类名调用，而普通方法被类名调用时会报错
