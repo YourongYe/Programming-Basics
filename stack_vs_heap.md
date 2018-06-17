@@ -99,6 +99,15 @@ int main(){
     }
 reference和pointer的区别在于：reference是一个数值，而pointer是一个地址。reference永远只能对应一个变量，不能改变。但是同一个pointer可以是
 a的pointer，也可以改为b的pointer
+
+        int a = 10;
+        int b = 20;
+        int & a_ref = a;
+        int & a_ref = b;
+结果会报错：
+        error: redeclaration of 'int& a_ref'
+        note: 'int& a_ref' previously declared her
+
 ### TODO: pointer of an array
 
 ### TODO: polymorphysm
