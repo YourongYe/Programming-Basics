@@ -68,45 +68,79 @@ int main(){
 
 # Pass by value and pass by reference
 
-    #include <iostream>
+```cpp
+#include <iostream>
 
-    using namespace std;
+using namespace std;
 
-    int main() 
+int main() 
+{
     {
-        {
-            // pointer
-            int a = 10;
-            int * a_ptr = &a; // int*是连在一起的，指的是一个int的指针叫a_ptr。&a表示取a的地址，并赋值给a_ptr。
-            (*a_ptr)++;  // 此处加*表示对pointer进行dereference，拿到pointer所指的值，并进行一些操作
-            cout<<"pointer result:"<<a<<endl; // a的空间+1之后，得到a=11  
+        // pointer
+        int a = 10;
+        int * a_ptr = &a; // int*是连在一起的，指的是一个int的指针叫a_ptr。&a表示取a的地址，并赋值给a_ptr。
+        (*a_ptr)++;  // 此处加*表示对pointer进行dereference，拿到pointer所指的值，并进行一些操作
+        cout<<"pointer result:"<<a<<endl; // a的空间+1之后，得到a=11  
 
-            typedef int* int_ptr; // define 一种数据类型，int*, 为int_ptr
-            int_ptr a_ptr2 = &a; // 跟上面一样
-            (*a_ptr2) = 15; // 把一个叫a_ptr2的指针进行dereference，然后把15赋值给它
-            cout<<"pointer result:"<<a<<endl;
-        }
-
-        {
-            //reference
-            int a = 10; 
-            int & a_ref = a; //int& 是连在一起的，指的是一个int的reference。
-            a_ref++; // 对a的reference进行操作，就是对a本身进行操作
-            cout<<"reference result:"<<a<<endl;
-        }
-
-        return 0;
+        typedef int* int_ptr; // define 一种数据类型，int*, 为int_ptr
+        int_ptr a_ptr2 = &a; // 跟上面一样
+        (*a_ptr2) = 15; // 把一个叫a_ptr2的指针进行dereference，然后把15赋值给它
+        cout<<"pointer result:"<<a<<endl;
     }
+
+    {
+        //reference
+        int a = 10; 
+        int & a_ref = a; //int& 是连在一起的，指的是一个int的reference。
+        a_ref++; // 对a的reference进行操作，就是对a本身进行操作
+        cout<<"reference result:"<<a<<endl;
+    }
+
+    return 0;
+}
+```
 reference和pointer的区别在于：reference是一个数值，而pointer是一个地址。reference永远只能对应一个变量，不能改变。但是同一个pointer可以是
 a的pointer，也可以改为b的pointer
 
+```
         int a = 10;
         int b = 20;
         int & a_ref = a;
         int & a_ref = b;
+```
 结果会报错：
         error: redeclaration of 'int& a_ref'
         note: 'int& a_ref' previously declared her
+
+
+
+```
+#include <iostream>
+
+using namespace std;
+
+void add5_by_ptr(int * val_ptr){
+    *val_ptr += 5;
+}
+
+void add10_by_ref(int & val_ref){
+    val_ref += 10;
+}
+
+int main()
+{
+    int a = 10;
+    add5_by_ptr(&a);
+    cout<<"pass by pointer result:"<<a<<endl;
+    
+    int b = 10;
+    add10_by_ref(b);
+    cout<<"pass by ref result:"<<b<<endl;
+    
+    return 0;
+}
+
+```
 
 ### TODO: pointer of an array
 
