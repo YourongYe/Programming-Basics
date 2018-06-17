@@ -100,7 +100,7 @@ int main()
 }
 ```
 reference和pointer的区别在于：reference是一个数值，而pointer是一个地址。reference永远只能对应一个变量，不能改变。但是同一个pointer可以是
-a的pointer，也可以改为b的pointer
+a的pointer，也可以改为b的pointer。reference 是一个永远指向a的pointer的deference。
 
 ```cpp
 int a = 10;
