@@ -31,7 +31,8 @@ int * ptr = new int(2);
 指向int的指针，在heap上分配（new）出的一个内存空间，把2传进去，再把这个地址传给pointer
 
 ### dereference：
-在获取pointer之后，加个*就把它指向地址的值拿到
+在获取pointer之后，加个*就把它指向地址的值拿到。
+Dereferencing a pointer means getting the value that is stored in the memory location pointed by the pointer.
 
 ### delete：
 释放pointer指向的heap上的那一块内存空间，即new的那块空间被删掉了，但是在stack上的pointer占用的空间依然存在。
@@ -65,8 +66,39 @@ int main(){
 }
 ```
 
-### TODO: pass by ref, pointer, and value
+# Pass by value and pass by reference
 
+    #include <iostream>
+
+    using namespace std;
+
+    int main() 
+    {
+        {
+            // pointer
+            int a = 10;
+            int * a_ptr = &a; // int*是连在一起的，指的是一个int的指针叫a_ptr。&a表示取a的地址，并赋值给a_ptr。
+            (*a_ptr)++;  // 此处加*表示对pointer进行dereference，拿到pointer所指的值，并进行一些操作
+            cout<<"pointer result:"<<a<<endl; // a的空间+1之后，得到a=11  
+
+            typedef int* int_ptr; // define 一种数据类型，int*, 为int_ptr
+            int_ptr a_ptr2 = &a; // 跟上面一样
+            (*a_ptr2) = 15; // 把一个叫a_ptr2的指针进行dereference，然后把15赋值给它
+            cout<<"pointer result:"<<a<<endl;
+        }
+
+        {
+            //reference
+            int a = 10; 
+            int & a_ref = a; //int& 是连在一起的，指的是一个int的reference。
+            a_ref++; // 对a的reference进行操作，就是对a本身进行操作
+            cout<<"reference result:"<<a<<endl;
+        }
+
+        return 0;
+    }
+reference和pointer的区别在于：reference是一个数值，而pointer是一个地址。reference永远只能对应一个变量，不能改变。但是同一个pointer可以是
+a的pointer，也可以改为b的pointer
 ### TODO: pointer of an array
 
 ### TODO: polymorphysm
