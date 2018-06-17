@@ -120,22 +120,22 @@ a的pointer，也可以改为b的pointer
 
 using namespace std;
 
-void add5_by_ptr(int * val_ptr){
+void add5ByPtr(int * val_ptr){
     *val_ptr += 5;
 }
 
-void add10_by_ref(int & val_ref){
+void add10ByRef(int & val_ref){
     val_ref += 10;
 }
 
 int main()
 {
     int a = 10;
-    add5_by_ptr(&a);
+    add5ByPtr(&a);
     cout<<"pass by pointer result:"<<a<<endl;
     
     int b = 10;
-    add10_by_ref(b);
+    add10ByRef(b);
     cout<<"pass by ref result:"<<b<<endl;
     
     return 0;
