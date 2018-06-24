@@ -25,7 +25,7 @@ Animal*ptr
 在stack 里，out of scope之后，它所占用的内存空间都会被自动回收
 
 ### heap：
-```
+```cpp
 int * ptr = new int(2);
 ```
 指向int的指针，在heap上分配（new）出的一个内存空间，把2传进去，再把这个地址传给pointer
@@ -40,7 +40,7 @@ memory leak：
 如果new完之后忘记删除了，heap上的这块内存空间就永远不能被释放了
 
 ### TODO: Pointer for customized class
-```
+```cpp
 #include <iostream>
 
 class A{
