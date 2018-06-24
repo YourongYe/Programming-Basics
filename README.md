@@ -83,3 +83,10 @@ not really. python has GIL (lock). Solution(Cpython, multiprocessing)
 2.Deadlock or not? 
 Check PID, Check heartbeat
 
+# Data Structures and Algorithm Design
+第一章、绪论：abc（c是重点，其他不用看）
+第二章、向量：abc、d1d2（d3d4可以看着玩）
+第三章、列表：abc
+第五章、二叉树：全看
+第七章、二叉搜索：abc
+第九章、词典：bcd1d2（遇到不懂不用强行看）
