@@ -145,4 +145,39 @@ int main()
 
 ### TODO: pointer of an array
 
+```
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    vector<int> v = {1,2,3,4,5,6,7};
+    
+    for(int i=0; i<v.size();++i){
+        cout<<v[i]<<endl;
+    }
+    
+    cout<<"pointer of an array"<<endl;
+    int array[7] = {1,2,3,4,5,6,7};
+    int * a_ptr = array;
+    for(int i=0; i<7;++i){
+        cout<<*a_ptr<<endl;
+        a_ptr++;
+    }
+    
+    cout<<"pointer of a vector"<<endl;
+    int * v_ptr = &v[0];
+    for(int i=0; i<v.size();++i){
+        cout<<*v_ptr<<endl;
+        v_ptr++;
+    }
+    
+
+    return 0;
+}
+
+```
+
 ### TODO: polymorphysm
