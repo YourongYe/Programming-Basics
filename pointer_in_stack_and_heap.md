@@ -39,7 +39,7 @@ Dereferencing a pointer means getting the value that is stored in the memory loc
 memory leak：
 如果new完之后忘记删除了，heap上的这块内存空间就永远不能被释放了
 
-### TODO: Pointer for customized class
+### Pointer for customized class
 ```cpp
 #include <iostream>
 
@@ -47,7 +47,7 @@ class A{
 private:
     int m_value;
 public:
-    A(int in):m_value(in){}; #initialization list,C++里的特殊写法，相当于python里的初始化函数
+    A(int in):m_value(in){}; //initialization list,C++里的特殊写法，相当于python里的初始化函数
     void printValue(){
         std::cout<<m_value<<std::endl;
     }
@@ -59,8 +59,8 @@ int main(){
     a.printValue();
 
     //nistantiate an obj in heap
-    A * a_ptr = new A(2); # 指向A这个class的指针叫a_ptr
-    a_ptr->printValue(); //call function via pointer
+    A * a_ptr = new A(2); // 指向A类型的指针叫a_ptr
+    a_ptr->printValue(); //call function via pointer 当一个指针指向一个class的obj时，如果想用指针调用function，就要用箭头而不是点
     (*a_ptr).printValue(); //dereference pointer then call function in a normal way
     delete a_ptr;
 }
