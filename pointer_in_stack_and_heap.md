@@ -47,7 +47,7 @@ class A{
 private:
     int m_value;
 public:
-    A(int in):m_value(in){};
+    A(int in):m_value(in){}; #initialization list,C++里的特殊写法，相当于python里的初始化函数
     void printValue(){
         std::cout<<m_value<<std::endl;
     }
@@ -59,7 +59,7 @@ int main(){
     a.printValue();
 
     //nistantiate an obj in heap
-    A * a_ptr = new A(2);
+    A * a_ptr = new A(2); # 指向A这个class的指针叫a_ptr
     a_ptr->printValue(); //call function via pointer
     (*a_ptr).printValue(); //dereference pointer then call function in a normal way
     delete a_ptr;
