@@ -22,6 +22,7 @@ virtual function:（我是一个可以但不必被overridden的方法）
 2. virtual function 可以有代码也可以没有 （can have functionality）
 3. virtual function 在derived class 中可以被重写（overridden）也可以不被重写
 
+PS: abstract method(function) = pure virtual function - a method with no implementation provided that needs to be implemented in a sub-class before the class can actually be instantiated
 
 ### 以下是例子
 
