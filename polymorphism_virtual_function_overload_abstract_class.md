@@ -12,7 +12,7 @@ abstract class
 
 Abstract method vs Virtual function
 
-abstract method:(我是一个规定了必须被实现的方法)
+abstract method:(也就是纯虚函数：我是一个规定了必须被实现的方法)
 1. abstract method 只存在于abstract class中（只能是abstract class的member function），
 2. 没有代码/实现（abstract method has no functionality/there is no implementation in abstract method）
 3. abstract class 被继承的时候，subclass必须override(重写) abstract method
