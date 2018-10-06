@@ -10,6 +10,11 @@ abstract class
 然后, derived class去继承这个abstract base class, 同时override base class里的abstract method;  
 最后在run time的时候(跑程序的时候), override后的function被call的时候, 体现出不同的功能, 这时候就是polymorphism的体现.   (this is called runtime polymorphism)
 
+Abstract class:
+1. must has one or more pure virtual (abstract) functions
+2. cannot be instantiated
+3. a derived class must implement the pure virtual function to be able to instantiated
+
 Abstract method vs Virtual function
 
 abstract method:(也就是纯虚函数：pure virtual function, 我是一个规定了必须被实现的方法)
