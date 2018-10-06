@@ -1,4 +1,4 @@
-# OO四天王
+# OO中4个绑定概念
 # polymorphism, virtual function, override, abstract class
 加一个额外的抽象类(abstract class),这四个概念通常都是一起出现的   
 polymorphism  
@@ -6,9 +6,22 @@ virtual function
 override  
 abstract class  
 
-整体上看, 首先你要写一个abstract class, 里面有一个virtual function;   
-然后, derived class去继承这个abstract base class, 同时override base class里的virtual function;  
-最后在run time的时候(跑程序的时候), override后的function被call的时候, 体现出不同的功能, 这时候就是polymorphism的体现.   
+整体上看, 首先你要写一个abstract class（不能实例化的类）, 里面有一个abstract method;   
+然后, derived class去继承这个abstract base class, 同时override base class里的abstract method;  
+最后在run time的时候(跑程序的时候), override后的function被call的时候, 体现出不同的功能, 这时候就是polymorphism的体现.   (this is called runtime polymorphism)
+
+Abstract method vs Virtual function
+
+abstract method:(我是一个规定了必须被实现的方法)
+1. abstract method 只存在于abstract class中（只能是abstract class的member function），
+2. 没有代码/实现（abstract method has no functionality/there is no implementation in abstract method）
+3. abstract class 被继承的时候，subclass必须override(重写) abstract method
+
+virtual function:（我是一个可以但不必被overridden的方法）
+1. virtual function 可以存在于abstract class中，也可存在于普通class中
+2. virtual function 可以有代码也可以没有 （can have functionality）
+3. virtual function 在derived class 中可以被重写（overridden）也可以不被重写
+
 
 ### 以下是例子
 
@@ -20,14 +33,14 @@ class Animal(ABC):
   def __init__(self, n): # Constructor of the class
     self.name = n
 
-  #这是一个abstractmethod, 也是一个纯虚函数(virtual function), 
+  #这是一个abstractmethod, 也是一个纯虚函数(即abstract method), 
   #定义了这个method就说明这个class是一个abstract class.
   
   #abstract class没法实例化, 就像自然界没有"动物"这么一种动物, 必须要生成"狗","猫"之类的才可以实例化
   #如果你尝试x = Animal(), 这是会报错的
   
   #为什么要有这么个class? 这就是规定了Animal统一的class标准, 而且继承Animal的class都要implement一个talk函数才能编译通过,
-  #在软件工程里就是规定继承Base class的必须要implement它提到的virtual function
+  #在软件工程里就是规定继承Base class的子类必须要implement它提到的纯虚函数
   @abstractmethod
   def talk(self): # Abstract method, defined by convention only
     pass
@@ -52,7 +65,7 @@ Dog('Lassie')]
 
 #如何体现多态(polymorphism)?
 #就是你有一个list, 你知道它存着不同类型的derived class obj, 比如有猫有狗, 但是只有在run time, 你才知道这个obj是猫还是狗
-#然后在run time的时候, 你call这个obj的virtual function(talk)的时候, 它能出现基于derived class定义的不同的行为, 这就是多态的表现
+#然后在run time的时候, 你call这个obj的abstract method(talk)的时候, 它能出现基于derived class定义的不同的行为, 这就是多态的表现
 for animal in animals:
   print(animal.myname() + ': ' + animal.talk())
 
