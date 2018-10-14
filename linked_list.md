@@ -1,4 +1,3 @@
-```cpp
 /******************************************************************************
 
                               Online C++ Compiler.
@@ -35,8 +34,8 @@ class List{
         m_head = new Node(0);
         Node * node_iter = m_head;
         for(int i=1;i<n;++i){
-            Node * node = new Node(i);
-            node_iter->next = node;
+            Node * node_ptr = new Node(i);
+            node_iter->next = node_ptr;
             node_iter = node_iter->next;
         }
     }
@@ -54,4 +53,3 @@ int main(){
     List l = List(7);
     l.printAllElem();
 }
-```
