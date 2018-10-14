@@ -26,7 +26,7 @@ class List{
     
     public:
     List(int n){
-        if(n<0){
+        if(n<=0){
             cout<<"invalid n"<<endl;
             return;
         }
