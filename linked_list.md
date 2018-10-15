@@ -1,4 +1,5 @@
 ```cpp
+
 /******************************************************************************
 
                               Online C++ Compiler.
@@ -46,6 +47,23 @@ class List{
         while(iter){
             cout<<iter->value<<endl;
             iter=iter->next;
+        }    
+    }
+    
+    void delElem(int i){
+        Node * iter = m_head;
+        if(i==m_head->value){
+            m_head = m_head->next;
+        }
+        else{
+            while(iter){
+                if(iter->next->value==i){
+                    iter->next = iter->next->next;
+                    break;
+                }
+                iter = iter->next;
+                
+            }
         }
     }
 };
@@ -53,5 +71,9 @@ class List{
 int main(){
     List l = List(7);
     l.printAllElem();
+    l.delElem(0);
+    l.printAllElem();
 }
+
+
 ```
