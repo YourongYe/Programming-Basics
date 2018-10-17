@@ -68,12 +68,15 @@ class Dog(Animal):
 animals = [Cat('Missy'),
 Cat('Mr. Mistoffelees'),
 Dog('Lassie')]
+```
+# 如何体现多态(polymorphism)?
+就是你有一个list, 你知道它存着不同类型的derived class obj, 比如有猫有狗, 但是只有在run time, 你才知道这个obj是猫还是狗
+然后在run time的时候, 你call这个obj的abstract method(talk)的时候, 它能出现基于derived class定义的不同的行为, 这就是多态的表现
 
-#如何体现多态(polymorphism)?
-#就是你有一个list, 你知道它存着不同类型的derived class obj, 比如有猫有狗, 但是只有在run time, 你才知道这个obj是猫还是狗
-#然后在run time的时候, 你call这个obj的abstract method(talk)的时候, 它能出现基于derived class定义的不同的行为, 这就是多态的表现
+```py
 for animal in animals:
   print(animal.myname() + ': ' + animal.talk())
-
-#what = Animal("impossible")
 ```
+
+Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+
