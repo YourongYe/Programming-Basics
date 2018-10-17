@@ -1,6 +1,18 @@
+# Iteration
+Iteration is the act of repeating a process. Each repetition of the process is also called an "iteration", and the results of one iteration are used as the starting point for the next iteration.
+
+# Recursion
+The process in which a function calls itself directly or indirectly. The corresponding function is called as recursive function.
+
+# Iteration vs Recursion
+Recursion makes code smaller while iteration makes it longer.
+Recursive functions may also be executed more slowly, much more stack space are used. 
+Iterations make no such demands on stack space, and may be more efficient where memory is limited.
+Recursion generates overhead of repeated function calls. 
+
 # Stack Overflow
-The most common cause of stack overflow is excessively deep or infinite recursion, in which a function calls itself 
-so many times that the space needed to store the variables and information associated with each call is more than can fit on the stack
+The most common cause of stack overflow is deep or infinite recursion. A function calls itself 
+so many times that the space needed to store the variables and information associated with each call is more than can fit on the stack. In other words, it runs out stack space.
 
 # Stack：
 内存：目前学到的东西都是存在stack里，在一个function里面，一个int会占用一个空间，一个function也会占用空间，出了这个function，在function内部的int
