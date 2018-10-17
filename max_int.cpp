@@ -20,3 +20,5 @@ result:
 */
 
 // 最大值为2的31次方-1，即2147483647。
+# A integer could be 32 or 64 bits, it depends on the operating system or the complier. 
+# 一个比特用于表示正负号，所以是2的31次方。又因为从0开始，不是从1，所以要-1.
