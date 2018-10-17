@@ -12,7 +12,7 @@ recursion是一层套一层的，最开始call的function要等最后call的func
 被return之后，function所占用的空间才能一次逐个被释放，所以就会很慢。
 如果recursion次数太多，就会出现stack overflow
 
-'''py
+```py
 import time
 
 def fib_recursive(n):
@@ -84,7 +84,7 @@ def loop_iter(n):
 
 loop_recur(10)
 loop_iter(10)
-'''
+```
 
 
 
