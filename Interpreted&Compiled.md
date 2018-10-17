@@ -1,11 +1,11 @@
 # Interpreted Programming Language:
 Implementations are interpreters. 
-The interpreter executes the program directly, translating each statement into machine code/instructions. Translation happens at runtime.
+The interpreter executes the program directly, translating each statement into machine code/instructions. Translation happens at runtime. The code is saved in the same format as you entered. 
 
 # Compiled Programming Language:
 Implementations are compilers.
 Compilers (translators that generate machine code from source code),compiling a program into machine-language instructions.
-The program is complied before the execution happens. 
+The program is complied before the execution happens. The code is complied and then saved as an executable file.
 
 # Difference:
 Compiled programs generally run faster than interpreted ones.
