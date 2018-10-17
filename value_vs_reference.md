@@ -1,10 +1,13 @@
 # Pass by value
 Pass by value means the called functions' parameter will be a copy of the callers' passed argument
+
 The value will be the same, but the identity - the variable - is different
+
 Changes to a parameter done by the called function changes the value of the parameter in the called function (which is only a copy)
 
 # Pass by reference
 Passing by reference means the called functions' parameter will be the same as the callers' passed argument (not the value, but the identity - the variable itself)
+
 Changes to a parameter done by the called function in this case changes the argument passed
 
 
