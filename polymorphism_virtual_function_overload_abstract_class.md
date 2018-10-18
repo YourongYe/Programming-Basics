@@ -103,6 +103,10 @@ class Animal {
 	virtual void talk(){
 		cout<<"id "<<m_id<<": animal talk"<<endl;
 	}
+	// 如果是纯虚函数的话，应该写成：
+	virtual void talk()=0;
+	// 如果返回值是int的话，就写int
+	
 };
 
 class Cat : public Animal {
