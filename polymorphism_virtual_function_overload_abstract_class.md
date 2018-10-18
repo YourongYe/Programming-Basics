@@ -179,7 +179,7 @@ class Cat: public Animal{
 };
 
 int main(){
-    Dog dog1;
+    Dog dog1; //C++中初始化函数没有写的话，实例化的时候就不需要带括号
     Cat cat1;
     Animal * prt = &dog1;
     prt->talk();
