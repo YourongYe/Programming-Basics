@@ -80,3 +80,71 @@ for animal in animals:
 
 Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
 
+## 面试问题: "什么是polymorphism?" 回答3大关键点
+1. Base type pointer (or reference)
+2. Virtual method
+3. Runtime
+
+## CPP example
+
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Animal {
+	protected:
+	int m_id;
+	
+	public:
+	Animal(int id): m_id(id){}
+	//############# 3. Virtual ##############
+	virtual void talk(){
+		cout<<"id "<<m_id<<": animal talk"<<endl;
+	}
+};
+
+class Cat : public Animal {
+	public:
+	Cat(int id):Animal(id){}
+	virtual void talk(){
+		cout<<"id "<<m_id<<": Cat talk"<<endl;
+	}
+};
+
+class Dog : public Animal {
+	public:
+	Dog(int id):Animal(id){}
+	virtual void talk(){
+		cout<<"id "<<m_id<<": Dog talk"<<endl;
+	}
+};
+
+int main(){
+    //############# 1. Base type pointer ################## 
+	vector<Animal*> animal_list;
+	
+	//################ 2. Run time ################
+	while(true){
+		string animal_name;
+		cout << "Join an animal:";
+		cin >> animal_name;
+		
+		if(animal_name == "Cat"){
+			int id = animal_list.size();
+			Animal * animal_ptr = new Cat(id);
+			animal_list.push_back(animal_ptr);
+		} else 
+		if(animal_name == "Dog") {
+			int id = animal_list.size();
+			Animal * animal_ptr = new Dog(id);
+			animal_list.push_back(animal_ptr);
+		}
+		
+		for(int i=0; i<animal_list.size(); ++i){
+			animal_list[i]->talk();
+		}
+	}
+}
+```
