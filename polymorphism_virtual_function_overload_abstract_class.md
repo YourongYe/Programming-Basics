@@ -152,3 +152,38 @@ int main(){
 	}
 }
 ```
+# 一个简易版本
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Animal{
+    public:
+        virtual void talk()=0;
+};
+
+class Dog: public Animal{ //publicly inherit Animal
+    public:
+        virtual void talk(){
+            cout << "Wolf" << endl;
+        }
+};
+
+class Cat: public Animal{
+    public:
+        virtual void talk(){
+            cout << "Meow" << endl;
+        }
+};
+
+int main(){
+    Dog dog1;
+    Cat cat1;
+    Animal * prt = &dog1;
+    prt->talk();
+    prt = &cat1;
+    prt->talk();
+}
+```
