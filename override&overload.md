@@ -1,3 +1,13 @@
+# Override keywords:
+1. virtual function
+2. only happen in class inheritance
+3. the same signature (same function name, same parameters, and same return type)
+
+# Overload keywords:
+1. same function name, but must have different return type or parameter
+2. can happen anywhere
+
+```py
 class people:
     sex = ''
     
@@ -31,3 +41,4 @@ print(Amy.period)
 print(Amy.arm)
 print(Amy.average_tempreture())
 Amy.pregnant(34,168)
+```
