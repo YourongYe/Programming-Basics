@@ -1,4 +1,16 @@
-  # Static method vs class method vs normal method
+# Class method
+It can have access to or modify the class attributes.
+It cannot access instance attributes. 
+A class method can be called without instantiating an object.
+
+# Static method
+It cannot have access to or modify either the class attributes or instance attributes.
+A static method can be called without instantiating an object.
+
+# Static method vs class method vs normal method
+All three can be called by an instance.
+Only Static method and class method can be called using the class name.
+Only normal method can use instance attributes.
   
 ```py
 class test:
