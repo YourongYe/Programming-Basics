@@ -1,3 +1,20 @@
+# Iterator
+Iterator is an object that has __iter__() and __next__() two member functions and StopIteration as its member variable.
+
+__iter()__ 方法返回迭代器对象本身，next() 方法返回容器的下一个元素，在没有后续元素时抛出 StopIteration 异常
+
+# Example
+```py
+iterator = iter([1,2,3,4,5])
+while True:
+    try:
+        print(iterator.__iter__()) # 此处返回地址，也就是self
+        print(next(iterator))
+    except StopIteration:
+        break
+```
+
+
 # 自制fabonacci迭代器
 ```py
 class fib_iterator():
