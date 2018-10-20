@@ -1,3 +1,10 @@
+# Deepcopy vs Shallow copy
+The difference between them only exists in compound objects (contains other objects)
+
+Shallow copy generates a new compound object and then insert references (to the objects in the original one) into it.
+
+Deepcopy generates a new compound object and then insert copy of objects into it. 
+
 # Example
 ```py
 from copy import copy, deepcopy
