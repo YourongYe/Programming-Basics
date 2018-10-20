@@ -3,6 +3,8 @@ Iterator is an object that has __iter__() and __next__() two member functions an
 
 __iter()__ 方法返回迭代器对象本身，next() 方法返回容器的下一个元素，在没有后续元素时抛出 StopIteration 异常
 
+事实上，Python 的 for 循环就是先通过内置函数 iter() 获得一个迭代器，然后再不断调用 next() 函数实现的
+
 # Example
 ```py
 iterator = iter([1,2,3,4,5])
