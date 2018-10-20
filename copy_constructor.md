@@ -1,5 +1,6 @@
 # Copy constructor
-A class must has a constructor, a copy constructor and a destructor
+A class must has a constructor, a copy constructor and a destructor.
+
 A copy constructor will be called in 3 conditions, as follows.
 
 ```cpp
