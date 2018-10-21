@@ -58,3 +58,70 @@ public:
     }
 };
 ```
+
+# 创建二叉树和遍历
+```cpp
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+struct Node{
+    int data;
+    Node * left;
+    Node * right;
+    Node(int v){
+        data = v;
+        left = right = NULL;
+    }
+};
+
+void insertNode(Node * node, int value){
+    if(value<=node->data){
+        if(node->left==NULL){
+            node->left = new Node(value);
+        }
+        else{
+            insertNode(node->left,value);
+        }
+    }
+    if(value>node->data){
+        if(node->right==NULL){
+            node->right = new Node(value);
+        }
+        else{
+            insertNode(node->right,value);
+        }
+    }
+}
+
+void preorder(Node * node){
+    if(node){
+    cout<<node->data<<" ";
+    preorder(node->left);
+    preorder(node->right);
+    }
+}
+
+int main()
+{
+    Node * root = new Node(8);
+    insertNode(root,7);
+    cout<<root->data<<endl;
+    for(int i=0; i<15; i++){
+        insertNode(root,i);
+    }
+    
+    preorder(root);
+    
+    
+}
+
+```
