@@ -1,7 +1,7 @@
 # Basics
-root：最顶部
-  leaf：最底部
-  depth(height):离root最远的Leaf的层
+root：最顶部  
+leaf：最底部  
+depth(height):离root最远的Leaf的层
 
 
 # C++ implementation
