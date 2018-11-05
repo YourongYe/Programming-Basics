@@ -142,11 +142,11 @@ int main()
     insertNode(root, 9);
     insertNode(root, 11);
     
-    traversal_postorder(root);
+    traversal_postorder(root); // left->right->root
     cout<<endl;
-    traversal_preorder(root);
+    traversal_preorder(root);  // root->left->right
     cout<<endl;
-    traversal_inorder(root);
+    traversal_inorder(root);  // left->root->right
     
 }
 
