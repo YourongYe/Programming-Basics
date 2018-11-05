@@ -74,54 +74,77 @@ Write your code in this editor and press "Run" button to compile and execute it.
 using namespace std;
 
 struct Node{
-    int data;
+    int value;
     Node * left;
     Node * right;
+    
     Node(int v){
-        data = v;
+        value = v;
         left = right = NULL;
     }
 };
 
-void insertNode(Node * node, int value){
-    if(value<=node->data){
+void insertNode(Node * node, int data){
+    if(data<=node->value){
         if(node->left==NULL){
-            node->left = new Node(value);
+            node->left = new Node(data);
         }
         else{
-            insertNode(node->left,value);
+            insertNode(node->left, data);
         }
     }
-    if(value>node->data){
+    if(data>node->value){
         if(node->right==NULL){
-            node->right = new Node(value);
+            node->right = new Node(data);
         }
         else{
-            insertNode(node->right,value);
+            insertNode(node->right, data);
         }
     }
-}
+};
 
-void preorder(Node * node){
-    if(node){
-    cout<<node->data<<" ";
-    preorder(node->left);
-    preorder(node->right);
+void traversal_inorder(Node * node){
+    if(!node){
+        return;
     }
-}
+    traversal_inorder(node->left);
+    cout<<node->value<<" ";
+    traversal_inorder(node->right);
+};
+
+void traversal_preorder(Node * node){
+    if(!node){
+        return;
+    }
+    cout<<node->value<<" ";
+    traversal_preorder(node->left);
+    traversal_preorder(node->right);
+};
+
+void traversal_postorder(Node * node){
+    if(!node){
+        return;
+    }
+    traversal_postorder(node->left);
+    traversal_postorder(node->right);
+    cout<<node->value<<" ";
+};
 
 int main()
 {
-    Node * root = new Node(8);
-    insertNode(root,7);
-    cout<<root->data<<endl;
-    for(int i=0; i<15; i++){
-        insertNode(root,i);
-    }
+    Node * root = new Node(10);
+    root->left = new Node(8);
+    root->right = new Node(12);
+    insertNode(root, 4);
+    insertNode(root, 3);
+    insertNode(root, 15);
+    insertNode(root, 5);
+    insertNode(root, 9);
+    insertNode(root, 11);
     
-    preorder(root);
-    
+    traversal_postorder(root);
     
 }
+
 
 ```
