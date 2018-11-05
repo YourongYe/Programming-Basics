@@ -143,8 +143,18 @@ int main()
     insertNode(root, 11);
     
     traversal_postorder(root);
+    cout<<endl;
+    traversal_preorder(root);
+    cout<<endl;
+    traversal_inorder(root);
     
 }
 
 
+```
+# Output
+```cpp
+3 5 4 9 8 11 15 12 10                                                                                                   
+10 8 4 3 5 9 12 11 15                                                                                                   
+3 4 5 8 9 10 11 12 15 
 ```
