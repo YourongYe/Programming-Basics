@@ -3,8 +3,8 @@ Encapsulation is defined as wrapping up of data and information under a single u
 It can restrict direct access to some of the object's components
 
 Benefit: 
-avoid duplications, easy to maintain
-the object need not reveal all its attributes and behaviors.
+avoid duplications, easy to maintain  
+the object need not reveal all its attributes and behaviors
 
 # Polymorphism 
 Not always happens along with abstract class
