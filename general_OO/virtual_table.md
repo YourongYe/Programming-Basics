@@ -1,7 +1,7 @@
 # Polymorphism
 可以定义一个基类的指针, 其指向一个继承类, 当通过基类的指针去调用函数时, 可以在运行时决定该调用基类的函数还是继承类的函数.   
 A base type pointer pointing to a derived class object, when it calls the virtual function at runtime, it will decide which derived class function to call, depending on the object it's pointing to.   
-The idea is that, the virtual function is called according to the type of object it's pointing to, instead of the pointer of the type. Virtual function is resolved late, at runtime.   
+The idea is that, the virtual function is called according to the type of object it's pointing to, instead of the pointer type, so virtual function is resolved late, at runtime.   
 Polymorphism is achieved through the late resolution of the virtual function, at runtime.
 
 # virtual table and virtual pointer
