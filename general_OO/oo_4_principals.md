@@ -3,7 +3,7 @@ Encapsulation is defined as wrapping up of data and information under a single u
 It can restrict direct access to some of the object's components
 
 Benefit:   
-avoid duplications, easy to maintain  
+avoid duplications, easy to maintain(modularity)
 the object need not reveal all its attributes and behaviors
 
 # Polymorphism 
@@ -12,7 +12,9 @@ A base type pointer, when we use it to call a function, it can decide whether to
 derived class virtual function at runtime. 
 
 # Abstraction
-Data abstraction refers to providing only essential information about the data to the outside world, hiding the background details or implementation.
+Data abstraction refers to providing only essential information about the data to the outside world, hiding the background details or implementation.  
+Generally speaking: class is the abstraction of a type of objects that have same features. Benefits: avoid duplications, easy to maintain    
+Narrowly speaking: abstract class
 
 # Inheritance
 A class can derive from a base class to have its features (member variables and functions).  
