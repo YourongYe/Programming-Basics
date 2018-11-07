@@ -2,7 +2,7 @@
 Encapsulation is defined as wrapping up of data and information under a single unit. In Object Oriented Programming, Encapsulation is defined as binding together the data and the functions that manipulates them.
 It can restrict direct access to some of the object's components
 
-Benefit: 
+Benefit:   
 avoid duplications, easy to maintain  
 the object need not reveal all its attributes and behaviors
 
