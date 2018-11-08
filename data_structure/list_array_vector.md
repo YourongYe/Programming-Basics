@@ -26,3 +26,8 @@ All used to store linear data of similar data type
 
 # Vector
 The only difference between vector and array is that vector has dynamic memory allocation. The complier will allocate a size when first instantiated. And if push back data reach the upper limit, it will allocate a new larger size, shift all data and delete the original one. 
+
+
+# Suitable situation
+Linked-list: highly dynamic linear data. Can't be sure about how much data we wanna store. Need to frequently insert or delete elements. 
+Array: stable linear data. size is not super large. Need to frequently and randomly access elements. Easily maintained in most programming languages.
