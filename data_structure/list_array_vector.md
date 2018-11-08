@@ -5,7 +5,7 @@ All used to store linear data of similar data type
 # Adv:  
 1. Insert & delete: easy to insert or delete an element by just changing the pointer of the previous element. Only take O(1) time.    
 2. Dynamic memory allocation: the memory of a linked list can be extended at runtime. Allocating or deallocating space means create a new node or delete one.   
-3*. Non-continuous memory space
+3. Non-continuous memory space
 
 # DisAdv:
 1. Memory use: need extra space for the pointer, especially the double linked list.  
@@ -21,7 +21,7 @@ All used to store linear data of similar data type
 1. Memory wastage: need to decide the fixed size in advance. And the memory use is equal to the size regardless of how much we actually use.  
 2. Insert & delete: insert or delete an element can be slow. It takes O(N) time due to the shifting.  
 3. Static memory allocation: memory allocated is fixed once we decided the size. Difficult to change it.  
-4*. Need a large enough continuous memory space
+4. Need a large enough continuous memory space
 
 
 # Vector
