@@ -29,5 +29,5 @@ The only difference between vector and array is that vector has dynamic memory a
 
 
 # Suitable situation
-Linked-list: highly dynamic linear data. Can't be sure about how much data we wanna store. Need to frequently insert or delete elements. 
-Array: stable linear data. size is not super large. Need to frequently and randomly access elements. Easily maintained in most programming languages.
+Linked-list: highly dynamic linear data. Can't be sure about how much data we wanna store. Need to frequently insert or delete or move elements. 
+Array: stable linear data. Size is not super large and. Need to frequently and randomly access but not change elements. Easily maintained in most programming languages.
