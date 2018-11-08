@@ -20,3 +20,7 @@ All used to store linear data of similar data type
 1. Memory wastage: need to decide the fixed size in advance. And the memory use is equal to the size regardless of how much we actually use.  
 2. Insert & delete: insert or delete an element can be slow. It takes O(N) time due to the shifting.  
 3. Static memory allocation: memory allocated is fixed once we set up the size. Difficult to change it.
+
+
+# Vector
+The only difference between vector and array is that vector has dynamic memory allocation. The complier will allocate a size when first instantiated. And if push back data reach the upper limit, it will allocate a new larger size, shift all data and delete the original one. 
