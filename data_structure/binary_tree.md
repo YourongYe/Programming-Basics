@@ -158,3 +158,65 @@ int main()
 10 8 4 3 5 9 12 11 15                                                                                                   
 3 4 5 8 9 10 11 12 15 
 ```
+# Full example
+```cpp
+#include <iostream>
+using namespace std;
+
+class BinTree{
+	int val;
+	BinTree *left;
+	BinTree *right;
+	
+	public:
+	BinTree(int);
+	~BinTree();
+	void insert(int);
+	bool find(int);
+	int min();
+	int max();
+	void walk();
+};
+
+BinTree::BinTree(int x){
+	val = x;
+	left = right = NULL;
+}
+BinTree::~BinTree(){}
+
+BinTree::insert(int x){
+	if(x<val){
+		if(left==NULL){
+			left = new BinTree(x);
+		}
+		else{
+			left->insert(x);
+		}
+	}
+	if(x>val){
+		if(right==NULL){
+			right = new BinTree(x);
+		}
+		else{
+			right->insert(x);
+		}
+	}
+
+}
+
+BinTree::find(int x){ 
+	if(x==val){
+		return true;
+	}
+	if(x>val){
+		right->find(x);
+	}
+	if(x<val){
+		left->find(x);
+	}
+}
+
+int main() {
+
+}
+```
