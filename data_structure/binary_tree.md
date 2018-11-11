@@ -176,6 +176,7 @@ class BinTree{
 	int min();
 	int max();
 	void walk();
+	void erase(int);
 };
 
 BinTree::BinTree(int x){
@@ -184,7 +185,7 @@ BinTree::BinTree(int x){
 }
 BinTree::~BinTree(){}
 
-BinTree::insert(int x){
+void BinTree::insert(int x){
 	if(x<val){
 		if(left==NULL){
 			left = new BinTree(x);
@@ -204,19 +205,77 @@ BinTree::insert(int x){
 
 }
 
-BinTree::find(int x){ 
+bool BinTree::find(int x){ 
 	if(x==val){
 		return true;
 	}
 	if(x>val){
-		right->find(x);
+	    if(right){
+		    right->find(x);
+	    }
+	    else{
+	        return false;
+	    }
 	}
 	if(x<val){
-		left->find(x);
+	    if(left){
+		    left->find(x);
+	    }
+	    else{
+	        return false;
+	    }
 	}
+}
+
+int BinTree::min(){
+    while(left->left!=NULL){
+        left = left->left;
+    }
+    return left->val;
+}
+
+int BinTree::max(){
+    while(right->right!=NULL){
+        right = right->right;
+    }
+    return right->val;
+}
+
+void BinTree::walk(){
+    if(left){
+    left->walk();
+    }
+    cout<<val<<" ";
+    if(right){
+    right->walk();
+    }
 }
 
 int main() {
-
+    BinTree root(5);
+    for(int i=0; i<=30; i++){
+        if(i!=5){
+        root.insert(i);
+        }
+    }
+    
+    root.walk();
+    
+    if(root.find(34)){
+        cout<<"yes"<<endl;
+    }
+    else{
+        cout<<"no"<<endl;
+    }
+    
+    cout<<root.max()<<endl;
+    cout<<root.min()<<endl;
 }
+```
+# Result
+```cpp
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30                                      
+no                                                                                                                      
+30                                                                                                                      
+0  
 ```
