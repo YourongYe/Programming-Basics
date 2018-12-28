@@ -1,5 +1,7 @@
 # __del__()
 In Python, each class has a constructor "__init__(self)" and a desctructor "__del__(self)".  
+If we use del to delete an object. It will call "__del__ (self)" and minus its reference counting by 1.  
+However, we cannot control when the garbage collection will collect this garbage.
 
 # Reference Counting
 Python uses reference counting as its mechanism to collect memory or garbage.  
