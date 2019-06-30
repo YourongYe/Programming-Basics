@@ -55,3 +55,4 @@ class name
 name
 ```
 conclusion: 只有static method和class method可以被类名调用，而普通方法被类名调用时会报错
+如果不写@staticmethod，则无法被实例调用，只能用class name调用
