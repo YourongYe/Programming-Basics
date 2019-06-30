@@ -187,3 +187,61 @@ int main(){
     prt->talk();
 }
 ```
+# Python版polymorphism (面试题)
+```py
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    def __init__(self, is_mammal, is_carnivorous):
+        self.__is_mammal = is_mammal
+        self.__is_carnivorous = is_carnivorous
+    
+    def getISMammal(self):
+        return self.__is_mammal
+        
+    def getIsCarnivorous(self):
+        return self.__is_carnivorous 
+    
+    @abstractmethod
+    def getGreeting(self):
+        pass
+    
+    def printAnimal(self):
+        print('A ',self.name, 'says ', self.getGreeting(), ',')
+        print('is', '' if self.getISMammal() else ' not', ' a mammal,')
+        print('is', '' if self.getIsCarnivorous() else ' not', ' carnivorous.')
+
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(True, True)
+        self.name = name
+        
+    def getGreeting(self):
+        return 'ruff'
+
+class Cow(Animal):
+    def __init__(self, name):
+        super().__init__(True, False)
+        self.name = name
+    
+    def getGreeting(self):
+        return 'moo'
+        
+class Duck(Animal):
+    def __init__(self, name):
+        super().__init__(False, False)
+        self.name = name
+    
+    def getGreeting(self):
+        return 'quack'
+    
+
+if __name__ == '__main__':
+    obj1 = Dog('dog')
+    obj2 = Cow ('cow')
+    obj3 = Duck('duck')
+    for i in [obj1,obj2,obj3]:
+        i.printAnimal()
+
+```
