@@ -193,7 +193,7 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
     def __init__(self, is_mammal, is_carnivorous):
-        self.__is_mammal = is_mammal
+        self.__is_mammal = is_mammal # 注意这里是private的
         self.__is_carnivorous = is_carnivorous
     
     def getISMammal(self):
@@ -244,4 +244,16 @@ if __name__ == '__main__':
     for i in [obj1,obj2,obj3]:
         i.printAnimal()
 
+```
+## 结果
+```py
+A  dog says  ruff ,
+is   a mammal,
+is   carnivorous.
+A  cow says  moo ,
+is   a mammal,
+is  not  carnivorous.
+A  duck says  quack ,
+is  not  a mammal,
+is  not  carnivorous.
 ```
