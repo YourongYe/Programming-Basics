@@ -20,7 +20,9 @@ def count_time(func):
  ```
  
  以上为decorator的实现方法  
- 这个函数把原来的function包装成一个新的function，并返回这个新的function
+ 这个函数把原来的function包装成一个新的function，并返回这个新的function  
+ 
+ 注：在python里，function也是object，所以可以作为参数传入另一个function
  
  ## Decorator 的原始用法
  ```py
@@ -30,6 +32,10 @@ def count_time(func):
 calculate_add = count_time(calculate_add) # 这一段的作用相当于是在calculate_add头上加一个decorator“@count_time”
 calculate_add(3,5)
 ```
+此处，calculate_add这个function的内容被改变，并将改变之后的内容重新装入calculate_add这个容器；  
+所以一旦重新定义了calculate_add，就不可能再用原来的function内容  
+所以decorator的本质是方便coding，而非在run time的时候可以自由切换一个函数的模式
+
 ## Decorator 的常见用法
  ```py
 @count_time
