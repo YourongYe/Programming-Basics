@@ -32,6 +32,9 @@ class iterator():
         return self
     
     def __next__(self):
+        if self.a >= 18:
+            raise StopIteration
+            
         self.a += 1
         return self.a 
 
@@ -67,7 +70,10 @@ for i in range(4):
 16
 17
 18
-19 # 第三个for循环的结果
+File "/Users/YoYo/Desktop/222.py", line 20, in __next__
+  raise StopIteration
+
+StopIteration # 第三个for循环的结果
 ```
 
 # 自制fabonacci迭代器
