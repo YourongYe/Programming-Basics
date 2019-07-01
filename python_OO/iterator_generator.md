@@ -36,7 +36,7 @@ class iterator():
         return self.a 
 
 
-obj = iterator()
+obj = iterator() # 生成迭代器
 
 for i in obj: # 一个迭代器可以写成这种形式，但它和list有本质区别，一个迭代器里只会有一个值（在这里），只是因为这个实例是iterable的，所以可以写成                      # for循环的形式，实例如果自带iter的函数都可以看成是iterable的
     print(i)
