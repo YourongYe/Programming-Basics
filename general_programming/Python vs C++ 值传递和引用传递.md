@@ -36,6 +36,6 @@ C++里如果没有明确选择引用传递，用pointer或者reference，则任�
 python中id相同的情况不多，需三个条件：  
 1.[-5, 256]区间的数字   
 2. assignment发生在同一个run time（如果分开run也会id不同）  
-3. 必须在同一个模块（block）中，functio
+3. 必须在同一个模块（block）中，比如在functio 中新建一个x，即使满足上面两个条件，也不会是同样的id
 
 
