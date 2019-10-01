@@ -20,7 +20,6 @@ print(c)
 True
 4455872192 4455872192 # a和b会share同一个ID是一种特殊情况，python是oo language，一般来讲，每个object都有自己的id
 22 12 #此后他们不会再share id，但如果在同一个run time中，我们又新建一个h=22，那么h和a的id也会相同
-# 总结：id相同的情况不多，需两个条件：1.[-5, 256]区间的数字 2. assignment发生在同一个run time（如果分开run也会id不同）
 
 [200, 2, 3, 4]
 ```
@@ -32,5 +31,11 @@ python不允许程序员选择采用传值还是传引用。Python参数传递�
  
 ## 和C++比较
 C++里如果没有明确选择引用传递，用pointer或者reference，则任何数据结构都默认是值传递
+
+# 结论2
+python中id相同的情况不多，需三个条件：  
+1.[-5, 256]区间的数字   
+2. assignment发生在同一个run time（如果分开run也会id不同）  
+3. 必须在同一个模块（block）中，functio
 
 
