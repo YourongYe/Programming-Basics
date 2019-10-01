@@ -3,8 +3,8 @@
 ```py
 a = 12
 b = a
-print(a is b)
-print(id(a), id(b)) # 这里实际上b=a应该属于值传递，但是由于python为了提高性能，会自动缓存[-5, 256]区间的数字，所以此处a和b指向同一个地址
+print(a is b) # 这里实际上b=a应该属于值传递，但是由于python为了提高性能，会自动缓存[-5, 256]区间的数字，所以此处a和b指向同一个地址
+print(id(a), id(b)) # 只有重新创建的variable才会有不同的id，可以推测出，存在cache上的值如果相同，则id相同
 a += 10
 print(a,b) # b没有随a改变，因为数字属于不可变对象，所以python默认应该是值传递
 
