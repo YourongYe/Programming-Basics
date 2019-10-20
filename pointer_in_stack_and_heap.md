@@ -145,7 +145,7 @@ int main()
 
 ### TODO: pointer of an array
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 
