@@ -122,10 +122,12 @@ using namespace std;
 
 void add5ByPtr(int * val_ptr){
     *val_ptr += 5;
+    cout<<"function1: "<<val_ptr<<endl;
 }
 
 void add10ByRef(int & val_ref){
     val_ref += 10;
+    cout<<"function2: "<<val_ref<<endl;
 }
 
 int main()
@@ -133,6 +135,7 @@ int main()
     int a = 10;
     add5ByPtr(&a);
     cout<<"pass by pointer result:"<<a<<endl;
+    cout<<"&a: "<<&a<<endl;
     
     int b = 10;
     add10ByRef(b);
@@ -144,7 +147,10 @@ int main()
 ```
 ### Result
 ```cpp
+function1: 0x719c0672d258
 pass by pointer result:15
+&a: 0x719c0672d258
+function2: 20
 pass by ref result:20
 ```
 ### TODO: pointer of an array
