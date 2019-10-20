@@ -142,7 +142,11 @@ int main()
 }
 
 ```
-
+### Result
+```cpp
+pass by pointer result:15
+pass by ref result:20
+```
 ### TODO: pointer of an array
 
 ```cpp
