@@ -345,3 +345,114 @@ A dog says 'ruff', is not carnivorous, and is not a mammal.
 A duck says 'quack', is not carnivorous, and is not a mammal.                                                           
 A cow says 'moo', is not carnivorous, and is not a mammal. 
 ```
+# BNP 同类面试题
+```cpp
+#include <iostream>
+
+using namespace std;
+
+class Car{
+  protected:
+  bool isSedan;
+  string seats;
+  public:
+  Car(bool isSedan, string seats){
+      this->isSedan = isSedan;
+      this->seats = seats;
+  }
+  bool getIsSedan(){
+      return this->isSedan;
+  }
+  
+  string getSeats(){
+      return this->seats;
+  }
+  virtual string getMileage() = 0;
+  void printCar(string name){
+      cout << "A " << name << " is " << (this->getIsSedan() ? "":"not ")
+      << "Sedan, " << "is " << this->seats << "-seater, " << "has " << this->getMileage()
+      << " mileage.";
+  }
+  
+};
+
+class WagonR: public Car{
+    
+    protected:
+    int mileage;
+    
+    public:
+    WagonR(int mileage): Car(false, "4"){
+        this->mileage = mileage;
+    }
+    virtual string getMileage(){
+        return to_string(this->mileage) + " kmpl";
+    }
+};
+
+class HondaCity: public Car{
+    protected:
+    int mileage;
+    
+    public:
+    HondaCity(int mileage): Car(true, "4"){
+        this->mileage = mileage;
+    }
+    virtual string getMileage(){
+        return to_string(this->mileage) + " kmpl";
+    }
+    
+};
+
+class InnovaCrysta: public Car{
+    protected:
+    int mileage;
+    
+    public:
+    InnovaCrysta(int mileage): Car(true, "6"){
+        this->mileage = mileage;
+    }
+    virtual string getMileage(){
+        return to_string(this->mileage) + " kmpl";
+    }
+};
+
+int main()
+{
+    int carType, carMileage;
+    cin >> carType >> carMileage;
+    Car *pointer;
+    if(carType == 0){
+        WagonR wagonR(carMileage);
+        pointer = &wagonR;
+        pointer->printCar("WagonR");
+    }
+    if(carType == 1){
+        HondaCity hondayCity(carMileage);
+        pointer = &hondayCity;
+        pointer->printCar("HondayCity");
+    }
+    if(carType == 2){
+        InnovaCrysta innovaCrysta(carMileage);
+        pointer = &innovaCrysta;
+        pointer->printCar("InnovaCrysta");
+    }
+    
+}
+
+```
+
+# Result
+```cpp
+2                                                                                                                       
+12345                                                                                                                   
+A InnovaCrysta is Sedan, is 6-seater, has 12345 kmpl mileage.  
+
+0                                                                                                                       
+3456                                                                                                                    
+A WagonR is not Sedan, is 4-seater, has 3456 kmpl mileage. 
+
+1                                                                                                                       
+2846                                                                                                                    
+A HondayCity is Sedan, is 4-seater, has 2846 kmpl mileage. 
+```
