@@ -281,7 +281,7 @@ class Animal{
     bool getIsCarnivorous(){
         return this->isCarnivorous;
     }
-    virtual string getGreeting()=0;
+    virtual string getGreeting() = 0; //注意virtual func的写法
     void printAnimal(string name){
         cout << "A " << name << " says '" << this->getGreeting() << "', is"
         << (this->getIsCarnivorous() ? "" : " not") << " carnivorous, and is"
@@ -291,7 +291,8 @@ class Animal{
 
 class Dog: public Animal{
     public:
-    Dog(): Animal(true,true) {}
+    Dog(): Animal(true,true) {} //这是子类无参数constructor的写法，如果input是run time才知道的话（即在main函数里），
+    				//那么Dog括号里也要加上参数，然后传给Animal
     
     virtual string getGreeting(){
         return "ruff";
@@ -309,7 +310,7 @@ class Cow: public Animal{
 
 class Duck: public Animal{
     public:
-    Duck(): Animal(false,false) {}
+    Duck(): Animal(false,false) {}  //注意此处，虽然说abstract class不能实例化，但是这一步相当于在子类里实例化了
     virtual string getGreeting(){
       return "quack";
         
@@ -357,7 +358,7 @@ using namespace std;
 
 class Car{
   protected:
-  bool isSedan;
+  bool isSedan; //和python不同，定义member variables的时候不需要加this
   string seats;
   public:
   Car(bool isSedan, string seats){
