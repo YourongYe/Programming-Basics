@@ -272,7 +272,7 @@ class Animal{
     
     public:
     Animal(bool isMammal, bool isCarnivorous){
-        this->isMammal = isMammal;
+        this->isMammal = isMammal;  //这里的this不能少，否则complier无法识别，结果就会不一样
         this->isCarnivorous = isCarnivorous;
     }
     bool getISMammal(){
