@@ -16,8 +16,8 @@ int main()
 ```
 
 # Pointer 和 Reference 的区别总结
-1. pointer 可以是空指针，而reference必须指向一个object  
-2. pointer 指向的对象可以换，而reference一旦assign给一个object之后就不能改变  
+1. pointer 可以是空指针，而reference必须指向一个object(pointer can be decalred as an empty pointer but reference has to be assigned to something)  
+2. pointer 指向的对象可以换，而reference一旦assign给一个object之后就不能改变（a pointer can be reassigned but a reference cannot）  
 3. 用法区别（两者刚好相反）：*prt 返回的是指向的值或者object，prt返回的是地址；&ref 返回的是地址，ref返回的是指向的值或object  
 4. 
 
