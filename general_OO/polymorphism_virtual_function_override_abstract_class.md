@@ -20,7 +20,9 @@ abstract class
 abstract method:(也就是纯虚函数：pure virtual function, 我是一个规定了必须被实现的方法)
 1. abstract method 只存在于abstract class中（只能是abstract class的member function），
 2. 没有代码/实现（abstract method has no functionality/there is no implementation in abstract method）
-3. abstract class 被继承的时候，subclass必须override(重写) abstract method
+3. abstract class 被继承的时候，subclass必须override(重写) abstract method  
+C++中的写法：   
+virtual string printCar() = 0;
 
 virtual function:（我是一个可以但不必被overridden的方法）
 1. virtual function 可以存在于abstract class中，也可存在于普通class中
