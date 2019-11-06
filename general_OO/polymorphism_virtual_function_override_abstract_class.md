@@ -339,7 +339,8 @@ A cow says 'moo', is not carnivorous, and is a mammal.
 1. C++的class如果没有声明，则默认所有的member variables 和 member functions 都是private的  
 2. this的作用类似python中的self. 但不完全一样，但加this是有必要的  
 3. 父类的member variables 通常声明为protected，如果不声明就是private，如果是private则可以继承但无法访问  
-4. 父类的member functions 通常
+4. 父类的member functions 通常声明为public，这样方便子类直接用或者overwrite  
+
 
 
 # 不加this的result
@@ -372,7 +373,7 @@ class Car{
   }
   virtual string getMileage() = 0;
   void printCar(string name){
-      cout << "A " << name << " is " << (this->getIsSedan() ? "":"not ")
+      cout << "A " << name << " is " << (this->getIsSedan() ? "":"not ")  //注意这里的写法 ？———：———
       << "Sedan, " << "is " << this->seats << "-seater, " << "has " << this->getMileage()
       << " mileage.";
   }
@@ -385,11 +386,11 @@ class WagonR: public Car{
     int mileage;
     
     public:
-    WagonR(int mileage): Car(false, "4"){
+    WagonR(int mileage): Car(false, "4"){ //注意和上面的写法对比，这里是有参数的子类constructor的写法
         this->mileage = mileage;
     }
     virtual string getMileage(){
-        return to_string(this->mileage) + " kmpl";
+        return to_string(this->mileage) + " kmpl"; //std::to_string相当于python里的str()
     }
 };
 
@@ -426,9 +427,9 @@ int main()
     cin >> carType >> carMileage;
     Car *pointer;
     if(carType == 0){
-        WagonR wagonR(carMileage);
-        pointer = &wagonR;
-        pointer->printCar("WagonR");
+        WagonR wagonR(carMileage); //这里初始化实例和上面不同，有参数，并且是由子类定义的参数
+        pointer = &wagonR; //取object wagonR 的地址，并存到pointerfunctio n c c z c
+        pointer->printCar("WagonR"); //多肽体现在这里，functio n cfunctio n c c
     }
     if(carType == 1){
         HondaCity hondayCity(carMileage);
