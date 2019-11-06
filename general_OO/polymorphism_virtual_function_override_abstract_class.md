@@ -428,13 +428,13 @@ int main()
     Car *pointer;
     if(carType == 0){
         WagonR wagonR(carMileage); //这里初始化实例和上面不同，有参数，并且是由子类定义的参数
-        pointer = &wagonR; //取object wagonR 的地址，并存到pointerfunctio n c c z c
-        pointer->printCar("WagonR"); //多肽体现在这里，functio n cfunctio n c c
+        pointer = &wagonR; //取object wagonR 的地址，并存到pointer中
+        pointer->printCar("WagonR"); //多肽体现在这里，用一个父类指针指向子类的实例，然后call同一个func就会有不同的结果
     }
     if(carType == 1){
         HondaCity hondayCity(carMileage);
         pointer = &hondayCity;
-        pointer->printCar("HondayCity");
+        pointer->printCar("HondayCity"); //sdfs
     }
     if(carType == 2){
         InnovaCrysta innovaCrysta(carMileage);
