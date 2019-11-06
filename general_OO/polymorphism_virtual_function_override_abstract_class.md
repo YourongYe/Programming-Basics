@@ -335,3 +335,13 @@ A dog says 'ruff', is carnivorous, and is a mammal.
 A duck says 'quack', is not carnivorous, and is not a mammal.                                                           
 A cow says 'moo', is not carnivorous, and is a mammal. 
 ```
+# 知识点总结
+1. C++的class如果没有声明，则默认所有的member variables 和 member functions 都是private的  
+2. this的作用类似python中的self. 但不完全一样，但加this是有必要的  
+
+# 不加this的result
+```cpp
+A dog says 'ruff', is not carnivorous, and is not a mammal.                                                             
+A duck says 'quack', is not carnivorous, and is not a mammal.                                                           
+A cow says 'moo', is not carnivorous, and is not a mammal. 
+```
