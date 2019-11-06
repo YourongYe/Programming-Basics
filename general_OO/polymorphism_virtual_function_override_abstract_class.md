@@ -260,14 +260,6 @@ is  not  carnivorous.
 
 # BNP inheritance 原题
 ```cpp
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
 
 using namespace std;
@@ -291,16 +283,15 @@ class Animal{
     }
     virtual string getGreeting()=0;
     void printAnimal(string name){
-        cout << "A" << name << "says" << this->getGreeting() << ", is"
-        << this->getIsCarnivorous() ? "" : "not" << "carnivorous, and is "
-        << this->getISMammal() ? "" : "not" << "a mammal." << endl;
+        cout << "A " << name << " says '" << this->getGreeting() << "', is"
+        << (this->getIsCarnivorous() ? "" : " not") << " carnivorous, and is"
+        << (this->getISMammal() ? "" : " not") << " a mammal." << endl;
     }
 };
 
 class Dog: public Animal{
-    Dog(){
-        Animal(true, true);
-    }
+    public:
+    Dog(): Animal(true,true) {}
     
     virtual string getGreeting(){
         return "ruff";
@@ -309,27 +300,38 @@ class Dog: public Animal{
 };
 
 class Cow: public Animal{
-    Cow(){
-        Animal(true, false);
-    }
+    public:
+    Cow(): Animal(true,false) {}
     virtual string getGreeting(){
         return "moo";
     }
 };
 
 class Duck: public Animal{
-  Duck(){
-      Animal(false, false)
-  }  
-  virtual string getGreeting(){
+    public:
+    Duck(): Animal(false,false) {}
+    virtual string getGreeting(){
       return "quack";
-  }
+        
+    }
 };
 
 int main()
 {
     Animal *pointer = new Dog;
     pointer->printAnimal("dog");
+    pointer = new Duck;
+    pointer->printAnimal("duck");
+    pointer = new Cow;
+    pointer->printAnimal("cow");
 }
 
+
+```
+
+# Result
+```cpp
+A dog says 'ruff', is carnivorous, and is a mammal.                                                                     
+A duck says 'quack', is not carnivorous, and is not a mammal.                                                           
+A cow says 'moo', is not carnivorous, and is a mammal. 
 ```
