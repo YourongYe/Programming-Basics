@@ -176,14 +176,14 @@ int main()
     
     cout<<"pointer of an array"<<endl;
     int array[7] = {1,2,3,4,5,6,7};
-    int * a_ptr = array;
+    int * a_ptr = array; // 区别在point assignment的这一步，array返回的就是array[0]的地址
     for(int i=0; i<7;++i){
         cout<<*a_ptr<<endl;
         a_ptr++;
     }
     
     cout<<"pointer of a vector"<<endl;
-    int * v_ptr = &v[0];
+    int * v_ptr = &v[0]; // 而vector不同于array，必须手写来取出v[0]的地址
     for(int i=0; i<v.size();++i){
         cout<<*v_ptr<<endl;
         v_ptr++;
