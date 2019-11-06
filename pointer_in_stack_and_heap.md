@@ -15,6 +15,12 @@ int main()
 }
 ```
 
+# Pointer 和 Reference 的区别总结
+1. pointer 可以是空指针，而reference必须指向一个object  
+2. pointer 指向的对象可以换，而reference一旦assign给一个object之后就不能改变  
+3. 用法区别（两者刚好相反）：*prt 返回的是指向的值或者object，prt返回的是地址；&ref 返回的是地址，ref返回的是指向的值或object  
+4. 
+
 ### 指针（pointer）：
 ```cpp
 int a = 0;
@@ -79,7 +85,7 @@ int main()
         // pointer
         int a = 10;
         int * a_ptr = &a; // int*是连在一起的，指的是一个int的指针叫a_ptr。&a表示取a的地址，并赋值给a_ptr。
-        (*a_ptr)++;  // 此处加*表示对pointer进行dereference，拿到pointer所指的值，并进行一些操作
+        (*a_ptr)++;  // 这里的括号很重要，不能省略，否则不对；此处加*表示对pointer进行dereference，拿到pointer所指的值，并进行一些操作
         cout<<"pointer result:"<<a<<endl; // a的空间+1之后，得到a=11  
 
         typedef int* int_ptr; // define 一种数据类型，int*, 为int_ptr
