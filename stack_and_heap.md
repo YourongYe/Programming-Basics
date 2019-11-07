@@ -3,8 +3,18 @@
 ###Heap: 通常指的是dynamic memory allocation
 ###RAM(Random access memory)里由stack，heap，global还有reserved block组成（可能还有其他）
 
+# Simple example
+### heap：
+```cpp
+int * ptr = new int(2);
+```
+指向int的指针，在heap上分配（new）出的一个内存空间，把2传进去，再把这个地址传给pointer
+### delete：
+释放pointer指向的heap上的那一块内存空间，即new的那块空间被删掉了，但是在stack上的pointer占用的空间依然存在。
+memory leak：
+如果new完之后忘记删除了，heap上的这块内存空间就永远不能被释放了
 
-##Stack特点
+## Stack特点
 1. Stack 上存的是local variables或者func，而global variables存在另一个block
 2. Stack memory 的implementation 就是 stack data structure 的implementation  
 3. Stack memory 遵循FILO的原则，先被allocate memory的variable或者func，会最后被deallocation  
@@ -12,7 +22,7 @@
 5. Stack 都是automatically allocate或者deallocate memory，不能人为干预  
 6. Stack 如果满了，会出现stack overflow的情况；通常发生在infinite recursion  
 
-##Heap特点
+## Heap特点
 1. Heap 上存的是不受scope限制的variable，但是指向heap的pointer是受scope限制的  
 2. 在heap上new一块内存，必须同时在stack上有一个pointer指向这块heap的内存  
 3. Heap 上的memory allocation 或者 deallocation全部由人为决定，no rule  
