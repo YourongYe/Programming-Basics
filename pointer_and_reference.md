@@ -1,4 +1,4 @@
-# Pointer in stack and heap
+# Pointer in stack pointing to heap
 
 ```cpp
 #include <iostream>
