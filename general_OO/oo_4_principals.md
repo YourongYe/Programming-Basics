@@ -1,7 +1,8 @@
 # Encapsulation
 1. Binding together the data and methods into a single unit   
 2. Hide/Protect the inner working (internal details of how an object works) from the outside world (users)   
-3. Can change the internal implementation and it won't impact users  
+3. Can change the internal implementation and it won't impact users   
+
 **Hide details at implementation level (compared to abstraction at design level)**  
 Supported using access modifiers e.g. public, private and protected.
 
