@@ -14,9 +14,11 @@ the object need not reveal all its attributes and behaviors
 I. Compile-time polymorphism    
   1. Function overloading (同名的多个function)  
   2. Operator overloading（同样的运算符号，不同的用法 Eg.2+3, 'a'+'b'）  
+  
 II. Run-time polymorphism  
   1. Abstract class polymorphism（其实是第2中的一种特殊情况）    
   2. Normal derived class polymorphism
+  
 **Abstract class polymorphism**   
 1. Base class 必须是abstract class（必须有一个pure virtual function）  
 2. A base type pointer, pointing to a derived class object, when we use it to call a function, it can decide which function to call at runtime.   
@@ -29,8 +31,10 @@ II. Run-time polymorphism
 1. Hides complexity, high level (more abstract) view    
 2. Providing only essential details, hiding unwanted details   
 3. Can become simpler when increasing the level of abstraction  
+
 **Hide details at design level (compared to encapsulation at implementation level)**    
 Suppored using abstract class in Python and C++, and interface in Java
+
 Generally speaking: class is the abstraction of a type of objects that have same features. Benefits: avoid duplications, easy to maintain    
 Narrowly speaking: abstract class
 
