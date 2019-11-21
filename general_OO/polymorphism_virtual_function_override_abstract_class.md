@@ -342,7 +342,7 @@ A cow says 'moo', is not carnivorous, and is a mammal.
 1. C++的class如果没有声明，则默认所有的member variables 和 member functions 都是private的  
 2. this的作用类似python中的self. 但不完全一样，但加this是有必要的  
 3. 父类的member variables 通常声明为protected，如果不声明就是private，如果是private则可以继承但无法访问  
-4. 父类的member functions 通常声明为public，这样方便子类直接用或者overwrite  
+4. 父类的member functions 通常声明为public，这样方便子类直接用或者override  
 
 
 
