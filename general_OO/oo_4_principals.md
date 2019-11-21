@@ -11,11 +11,11 @@ avoid duplications, easy to maintain(modularity)
 the object need not reveal all its attributes and behaviors
 
 # Polymorphism 
-I. Compile-time polymorphism    
+I. Compile-time polymorphism (early binding at compilation)    
   1. Function overloading (同名的多个function)  
   2. Operator overloading（同样的运算符号，不同的用法 Eg.2+3, 'a'+'b'）  
   
-II. Run-time polymorphism  
+II. Run-time polymorphism (later binding at run time)   
   1. Abstract class polymorphism（其实是第2中的一种特殊情况）    
   2. Normal derived class polymorphism
   
@@ -26,6 +26,13 @@ II. Run-time polymorphism
 **Normal derived class polymorphism**   
 1. Base class 有virtual func
 2. derived class 有同名func override base class的func
+
+**Early Binding**   
+The compiler directly associate an address to the function call. The function call is fixed during compilation.
+
+**Later Binding**  
+The compiler write code to identify the obejct and then match the function to call. Therefore, which function to call can only
+be decided at run time.
 
 # Abstraction
 1. Hides complexity, high level (more abstract) view    
