@@ -49,3 +49,56 @@ calculate_add(3,5)
 Result =  8
 using time:  0.0004982948303222656
 ```
+
+
+# Fib example
+```py
+import time
+
+def fib(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+    
+    
+    
+def fib_list(fib):
+    cache = {}
+    def new_func(n):
+        if n in cache:
+            return cache[n]
+        else:
+            middle = fib(n)
+            cache[n] = middle
+            return cache[n]
+    return new_func
+
+
+start = time.time()
+print(fib(35))
+print(time.time()-start)
+
+@fib_list
+def fib(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+start = time.time()
+print(fib(35))
+print(time.time()-start)
+```
+
+# Result
+```py
+9227465
+2.8743741512298584
+9227465
+5.078315734863281e-05
+```
