@@ -17,9 +17,11 @@ Eg. key = 12387649852793
     address = (12 + 38 + 76 + ..) Mod n
 
 # A good hash function
-1. Minimise collisions  
+1. Minimise collisions (less time to resolve collision and therefore faster data retrieval)  
 2. Easy to compute (compute the address takes constant time)  
-3. 
+3. Uniform distribution of the hash values (the space is used efficiently)  
+4. Resolve collisions effectively
+
 # Buckets and memory
 # fixed memory and dynamic memory, pros and cons
 **Dynamic hashtable:**  
@@ -33,7 +35,9 @@ The more data you have, the more likely to have collisions.
 Load factor can be used to evaluate the likelyhood of collisions.  
 ## 1. Open addressing
 Place an item somewhere other than its calculated address. Every address is open to any items  
+
 **- Linear Probing**  
+
 **Placing an item:** If the calculated address is occupied, then a linear search is used to find the next available bucket/slot.  
 Might cycle around if it gets to the end of the array and still can't find an empty bucket.  
 **Finding an item:** If the lookup item is not in the calculated address, a linear search is used to find the item.  
@@ -42,8 +46,10 @@ Might cycle around if it gets to the end of the array and still can't find an em
 **- Plus 3 rehash**  
 Instead of searching along to find the next available bucket, it will lookup every third bucket along until a free apce is found. Can avoid primary clustering.  
 
-**- Quadratic probing (Failed attempts<sup>2</sup>)**
-Square the distance 
+**- Quadratic probing (Failed attempts<sup>2</sup>)**  
+Square the number of the failed attempts to decide how far to look next from the orginal collision.  
+
+**- Double hashing**
 
 ## 2. Closed addressing
 In each bucket, we have a pointer poingting to the head of a linked list. Every item is placed exatcly in the calculated address. Lookup is faster than linear probing. More efficient when the load factor is high.    
