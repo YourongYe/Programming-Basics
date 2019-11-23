@@ -1,14 +1,15 @@
 # What is hashtable
 1. Key-value pairs: store **unordered** data in key-value pairs, key must be **unique**  
 2. Constant time for lookup, insert and delete on average   
-3. 
 
 # Hash functions (commonly used)
 Hash function is used to calculate the **hash code** (index/address) of the array and find the corresponding value.   
 The key itself is used to calculate the index.   
+
 **Commonly used hash functions (Hash Algorithm)**
 1. SHA-2 and SHA-3 (Secure Hashing Algorithm)  
 2. MD5 (Message Digest 5)  
+
 **Methods**
 1. address = key Mod n (n is the size of the array)  
 2. address = ASCII sum Mod n  
