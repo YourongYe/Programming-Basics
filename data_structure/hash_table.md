@@ -24,9 +24,13 @@ Eg. key = 12387649852793
 4. Resolve collisions effectively
 
 # Buckets and memory
-# fixed memory and dynamic memory, pros and cons
-**Dynamic hashtable:**  
-The size of the array can increase at run time when the load factor reach a certain threshold  
+# Static Hahsing vs Dynamic Hashing
+**Dynamic hashing**  
+The hashtable will expand or shrink depending on the size of the input data. In other words, it will dynamically add or remove
+data buckets at run time.
+The size of the hashtable can increase at run time when the load factor reach a certain threshold  
+**Static hashing**
+The number of data buckets in the memory remains the same throughout.
 
 # Complexity
 # Rehashing
