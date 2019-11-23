@@ -29,7 +29,7 @@ Eg. key = 12387649852793
 The hashtable will expand or shrink depending on the size of the input data. In other words, it will dynamically add or remove
 data buckets at run time.
 The size of the hashtable can increase at run time when the load factor reach a certain threshold  
-**Static hashing**
+**Static hashing**  
 The number of data buckets in the memory remains the same throughout.
 
 # Complexity
@@ -54,7 +54,8 @@ Instead of searching along to find the next available bucket, it will lookup eve
 **- Quadratic probing (Failed attempts<sup>2</sup>)**  
 Square the number of the failed attempts to decide how far to look next from the orginal collision.  
 
-**- Double hashing**
+**- Double hashing**  
+A second hash function is used to calculate a new hash code when there is a collision
 
 ## 2. Closed addressing
 In each bucket, we have a pointer poingting to the head of a linked list. Every item is placed exatcly in the calculated address. Lookup is faster than linear probing. More efficient when the load factor is high.    
