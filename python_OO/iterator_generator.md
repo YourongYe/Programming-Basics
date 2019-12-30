@@ -102,4 +102,20 @@ for i in range(0,8):
     print(next(fib))
     
 ```
-    
+
+# iterator 的其他用法
+```py
+t = [1,2,3,4,5,6,7,8]
+t  = iter(t)
+print(2 in t) # t会直接跳到2，略过1
+print(4 in t) # t会略过3，直接跳到4
+print(next(t))
+print(5 in t) # 5已经过了，所以就没有了
+```
+结果：
+```py
+True
+True
+5
+False
+```
