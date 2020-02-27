@@ -98,6 +98,34 @@ loop_recur(10)
 loop_iter(10)
 ```
 
+# What is tail recursion?
+A recursive function is tail recursive when recursive call is the last thing executed by the function. For example the following C++ function print() is tail recursive.
+
+## A NON-tail-recursive function. 
+```py
+def fact(n): 
+  
+    if (n == 0): 
+        return 1
+  
+    return n * fact(n-1) 
+```
+## A tail recursive function 
+
+```py
+
+def factTR(n, a): 
+  
+    if (n == 0): 
+        return a 
+  
+    return factTR(n - 1, n * a) 
+  
+# A wrapper over factTR 
+def fact(n): 
+    return factTR(n, 1) 
+ ```
+
 
 
 
