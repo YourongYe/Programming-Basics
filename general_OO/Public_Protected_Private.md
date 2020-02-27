@@ -16,4 +16,4 @@ You'll notice this during **debugging**. If it's private, you know you can only 
 
 As much as possible, ban getters/setters and make properties private. This follows the principle of **information hiding** - you shouldn't care about what properties a class has. It should be **self-contained**. Of course, in practice this isn't feasible, and if it is, a design that follows this will be more cluttered and harder to maintain than one that doesn't.
 
-**self-contained: ** 所有需要完成的动作（eg.修改变量的值）都应该用class里提供的func来完成
+**self-contained:** 所有需要完成的动作（eg.修改变量的值）都应该用class里提供的func来完成
