@@ -101,6 +101,9 @@ loop_iter(10)
 # What is tail recursion?
 A recursive function is tail recursive when recursive call is the last thing executed by the function. For example the following C++ function print() is tail recursive.
 
+# Why do we care?
+The tail recursive functions considered better than non tail recursive functions as tail-recursion can be optimized by compiler. Eg. If the first recursive func called the second recursive func by saying 'return func(n-1)', in this case, the compiler does not have to reserve any stack memory for the first recursive func because the final result is only depending on the next func.
+
 ## A NON-tail-recursive function. 
 ```py
 def fact(n): 
