@@ -10,6 +10,12 @@ Recursive functions may also be executed more slowly, much more stack space are 
 Iterations make no such demands on stack space, and may be more efficient where memory is limited.
 Recursion generates overhead of repeated function calls. 
 
+# When to use recursion?
+### Does the problem obviously break down into subproblems?
+If you see a way to break a problem down into subproblems, then it can likely be solved easily using recursion.
+### Is it easier to solve it recursively than iteratively?
+Eg. BST problem is normally better to be solved by recursion instead of iteration.
+
 # Stack Overflow
 The most common cause of stack overflow is deep or infinite recursion. A function calls itself 
 so many times that the space needed to store the variables and information associated with each call is more than can fit on the stack. In other words, it runs out stack space.
