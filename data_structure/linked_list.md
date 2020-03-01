@@ -124,6 +124,7 @@ public:
     void insert(int v, int position);
     void deleteNode(int v, Node** head_ref);
     void print();
+    void getSize();
 };
 
 void Node::addToTail(int v){
@@ -139,6 +140,7 @@ void Node::addToHead(int v, Node **head_ref){
     Node *new_node = new Node(v);
     new_node->next = *head_ref;
     *head_ref = new_node;
+    this->size++;
     cout << "head_ref: " << head_ref << endl;
     cout << "*head_ref: " << *head_ref << endl;
     // cout << **head_ref << " ";
@@ -154,6 +156,7 @@ void Node::insert(int v, int position){
     }
     new_node->next = temp->next;
     temp->next = new_node;
+    this->size++;
 }
 
 void Node::print(){
@@ -168,6 +171,7 @@ void Node::print(){
 void Node::deleteNode(int v, Node** head_ref){ // 参数必须有head的double pointer，因为当删除的node是head时，需要改变head指向的address
     Node* temp = this;
     Node* prev;
+    this->size--;
     if (temp->val == v){
         *head_ref = temp->next; // 对double pointer 的dereference，把第一个pointer存的address改掉
         free(temp); // deallocate memory
@@ -180,6 +184,10 @@ void Node::deleteNode(int v, Node** head_ref){ // 参数必须有head的double p
     prev->next = temp->next;
     free(temp);
     return;
+}
+
+void Node::getSize(){
+    cout << this->size << endl;
 }
 
 int main()
@@ -199,22 +207,23 @@ int main()
     head->print();
     head->deleteNode(-1, &head);
     head->print();
-    
+    head->getSize();
     
 }
 
 ```
 # Results
 ```cpp
-head_ref: 0x7ffc18728668                                                                                                
-*head_ref: 0xefec40                                                                                                     
+head_ref: 0x7ffd303ecc88                                                                                                
+*head_ref: 0x24cac40                                                                                                    
 0 1 2 5 8                                                                                                               
-head_ref: 0x7ffc18728668                                                                                                
-*head_ref: 0xefece0                                                                                                     
+head_ref: 0x7ffd303ecc88                                                                                                
+*head_ref: 0x24cace0                                                                                                    
 -1 0 1 2 5 8 3                                                                                                          
 -1 0 66 1 2 5 8 3                                                                                                       
 -1 0 1 2 5 8 3                                                                                                          
-0 1 2 5 8 3 
+0 1 2 5 8 3                                                                                                             
+6  
 ```
 
 # Uncommon implementation
