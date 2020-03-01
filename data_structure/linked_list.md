@@ -1,3 +1,4 @@
+# Uncommon implementation
 ```cpp
 
 /******************************************************************************
@@ -77,3 +78,111 @@ int main(){
 
 
 ```
+
+# Common implementation
+```
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class Node {
+public:
+    int val;
+    Node* next;
+    Node(int v){
+        this->val = v;
+        this->next = NULL;
+    }
+};
+
+class LinkedList {
+private:
+    Node* head;
+public:
+    LinkedList(){
+        this->head = NULL;
+    }
+    void print();
+    void append(int v);
+    void insert(int v, int position);
+    void deleteElement(int position);
+};
+
+void LinkedList::append(int v){
+    Node* temp = this->head;
+    if(temp==NULL){
+        this->head = new Node(v);
+    }
+    else{
+        while(temp->next!=NULL){
+            temp = temp->next;
+        }
+        temp->next = new Node(v);
+    }
+    
+}
+
+void LinkedList::print(){
+    Node* temp = this->head;
+    while(temp){
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void LinkedList::insert(int v, int position){
+    Node* temp = this->head;
+    if(position==0){
+        this->head = new Node(v);
+        this->head->next = temp;
+    }
+    else{
+        for(int i=0; i<position-1; i++){
+            temp = temp->next;
+        }
+        // Node* later_part = temp->next;
+        Node* new_node = new Node(v);
+        new_node->next = temp->next;
+        temp->next = new_node;
+    }
+    
+}
+
+void LinkedList::deleteElement(int position){
+    Node*temp = this->head;
+    while(position>1){
+        temp = temp->next;
+        position--;
+    }
+    temp->next = temp->next->next;
+    //should i delete the node?
+}
+
+
+int main()
+{
+    LinkedList* list_example = new LinkedList();
+    list_example->append(2);
+    list_example->append(3);
+    list_example->append(4);
+    list_example->print();
+    list_example->insert(10, 2);
+    list_example->print();
+    list_example->insert(66, 0);
+    list_example->print();
+    list_example->deleteElement(2);
+    list_example->print();
+    list_example->deleteElement(3);
+    list_example->print();
+}
+
+```cpp
