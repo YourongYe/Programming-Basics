@@ -80,7 +80,7 @@ int main(){
 ```
 
 # Common implementation
-```
+```cpp
 /******************************************************************************
 
                               Online C++ Compiler.
@@ -185,4 +185,4 @@ int main()
     list_example->print();
 }
 
-```cpp
+```
