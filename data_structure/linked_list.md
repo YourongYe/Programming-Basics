@@ -98,7 +98,7 @@ int main()
 }
 
 ```
-# Node class only
+# Node class only (with head outside, iteration version)
 ```cpp
 /******************************************************************************
 
@@ -224,6 +224,116 @@ head_ref: 0x7ffd303ecc88
 -1 0 1 2 5 8 3                                                                                                          
 0 1 2 5 8 3                                                                                                             
 6  
+```
+
+# Node class only (recursive version)
+```cpp
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class LinkedList {
+    int val;
+    LinkedList* next;
+    // int size;
+    
+public:
+    LinkedList(int v): val(v), next(NULL) {}
+    ~LinkedList();
+    void print();
+    void append(int n);
+    void insert(int position, int num);
+    void deleteNode(int n);
+    int size();
+};
+
+void LinkedList::print(){
+    cout << val << " ";
+    if(next){
+        next->print();  
+    }  
+    else{
+        cout << endl;
+    }
+}
+
+void LinkedList::append(int n){
+    if(not next){
+        next = new LinkedList(n);
+        // size++;
+    }
+    else{
+        next->append(n);
+    }
+    
+}
+
+void LinkedList::insert(int position, int num){
+    if(position!=1){
+        next->insert(position-1, num);
+    }
+    else{
+        LinkedList* new_node = new LinkedList(num);
+        new_node->next = next;
+        next = new_node;
+    }
+}
+
+int LinkedList::size(){
+    if(next){
+        return next->size() + 1;
+    }
+    else{
+        return 1;
+    }
+}
+
+// void LinkedList::deleteNode(int n){
+//     if(val==n){
+        
+//     }
+//     if(next->val==n){
+        
+//     }
+// }
+
+int main()
+{
+    LinkedList* head = new LinkedList(0);
+    head->append(1);
+    head->append(2);
+    head->append(3);
+    head->append(4);
+    head->print();
+    cout << head->size() << endl;
+    head->insert(2, 10);
+    head->print();
+    cout << head->size() << endl;
+    // head->insert(0, 30);
+    // head->print();
+    head->insert(6, 60);
+    head->print();
+    cout << head->size() << endl;
+    
+}
+
+```
+# Result
+```cpp
+0 1 2 3 4                                                                                                               
+5                                                                                                                       
+0 1 10 2 3 4                                                                                                            
+6                                                                                                                       
+0 1 10 2 3 4 60                                                                                                         
+7  
 ```
 
 # Uncommon implementation
