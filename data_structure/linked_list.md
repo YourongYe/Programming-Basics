@@ -228,17 +228,11 @@ head_ref: 0x7ffd303ecc88
 
 # Node class only (recursive version)
 ```cpp
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 class LinkedList {
     int val;
@@ -247,13 +241,22 @@ class LinkedList {
     
 public:
     LinkedList(int v): val(v), next(NULL) {}
-    ~LinkedList();
     void print();
     void append(int n);
     void insert(int position, int num);
-    void deleteNode(int n);
+    void deleteNode(int n, LinkedList** head);
     int size();
+    LinkedList* getNext();
+    int getValue();
 };
+
+LinkedList* LinkedList::getNext(){
+    return next;    
+}
+
+int LinkedList::getValue(){
+    return val;
+}
 
 void LinkedList::print(){
     cout << val << " ";
@@ -296,34 +299,64 @@ int LinkedList::size(){
     }
 }
 
-// void LinkedList::deleteNode(int n){
-//     if(val==n){
-        
-//     }
-//     if(next->val==n){
-        
-//     }
-// }
+void LinkedList::deleteNode(int n, LinkedList** head){
+    if(val == n){
+        LinkedList* node = *head;
+        *head = next;
+        delete node;
+        return;
+    }
+    if(not next){
+        cout << "value not found" << endl;
+        return;
+    }
+    else if(next->val == n){
+        LinkedList* node = next;
+        next = next->next;
+        delete node;
+        return;
+    }
+    else{
+        next->deleteNode(n, head);
+    }
+}
 
 int main()
 {
     LinkedList* head = new LinkedList(0);
+    // append some values
     head->append(1);
     head->append(2);
     head->append(3);
     head->append(4);
+    // print them out
     head->print();
+    // get the size
     cout << head->size() << endl;
+    // insert a value to a given position
     head->insert(2, 10);
     head->print();
     cout << head->size() << endl;
-    // head->insert(0, 30);
-    // head->print();
+    // insert a value to the end
     head->insert(6, 60);
     head->print();
     cout << head->size() << endl;
+    // get the next and value from outside of the class
+    LinkedList* temp = head;
+    while(temp){
+        cout << temp->getValue() << " ";
+        temp = temp->getNext();
+    }
+    cout << endl;
+    // delete a node at a given position
+    head->deleteNode(100, &head);
+    head->print();
+    
+    
+    
     
 }
+
 
 ```
 # Result
@@ -333,7 +366,10 @@ int main()
 0 1 10 2 3 4                                                                                                            
 6                                                                                                                       
 0 1 10 2 3 4 60                                                                                                         
-7  
+7                                                                                                                       
+0 1 10 2 3 4 60                                                                                                         
+value not found                                                                                                         
+0 1 10 2 3 4 60    
 ```
 
 # Uncommon implementation
