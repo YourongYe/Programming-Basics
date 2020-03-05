@@ -1,10 +1,28 @@
 # Why use const?
-The const keyword allows you to specify whether or not a variable is modifiable. You can use const to prevent modifications to   
-variables and const pointers and const references prevent changing the data pointed to (or referenced).  
+The const keyword allows you to **specify whether or not a variable is modifiable**. You can use const to **prevent modifications** to variables and const pointers and const references prevent changing the data pointed to (or referenced).  
  
-1. The primary purpose of constness is to provide documentation and prevent programming mistakes.    
-2. Const allows you to make it clear to yourself and others that something should not be changed.   
+1. The primary purpose of constness is to provide documentation and **prevent programming mistakes**.    
+2. Const allows you to **make it clear to yourself and others** that something should not be changed.   
 
+# Why it is a good practice to use const as much as possible?
+Using const is good practice because...
+
+1. It protects you from accidentally changing variables that aren't intended be changed,  
+2. It protects you from making accidental variable assignments, and  
+3. The compiler can optimize it. For instance, you are protected from  
+
+At the same time, the **compiler can generate more efficient code** because it knows exactly what the state of the variable/function will be at all times. If you are writing tight C++ code, this is good.
+
+It can be difficult to use const-correctness consistently, but the end code is more **concise and safer to program with**. When you do a lot of C++ development, the benefits of this quickly manifest.
+
+It's for debug as well, cus you know where possible would the object be changed.
+
+# Setter vs Getter
+There are two types of functions in a class:  
+1. Setter: funcs that will change the member variables.  
+2. Getter: funcs that will do read-only action to objects.  
+
+# Example
 It's particularly useful to declare reference parameters to functions as const references:
 ```cpp
 bool verifyObjectCorrectness (const myObj& obj);
@@ -26,21 +44,3 @@ const Class* object = new const Class();
 const Class_Name Object_name;
 const Test t; 
 ```
-
-# Why it is a good practice to use const as much as possible?
-Using const is good practice because...
-
-It protects you from accidentally changing variables that aren't intended be changed,  
-It protects you from making accidental variable assignments, and  
-The compiler can optimize it. For instance, you are protected from  
-
-At the same time, the **compiler can generate more efficient code** because it knows exactly what the state of the variable/function will be at all times. If you are writing tight C++ code, this is good.
-
-It can be difficult to use const-correctness consistently, but the end code is more **concise and safer to program with**. When you do a lot of C++ development, the benefits of this quickly manifest.
-
-It's for debug as well, cus you know where possible would the object be changed.
-
-# Setter vs Getter
-There are two types of functions in a class:  
-1. Setter: funcs that will change the member variables.  
-2. Getter: funcs that will do read-only action to objects.  
