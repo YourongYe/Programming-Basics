@@ -241,24 +241,25 @@ class LinkedList {
     
 public:
     LinkedList(int v): val(v), next(NULL) {}
-    void print();
+    void print() const;
     void append(int n);
     void insert(int position, int num);
     void deleteNode(int n, LinkedList** head);
-    int size();
-    LinkedList* getNext();
-    int getValue();
+    int size() const;
+    LinkedList* getNext() const;
+    int getValue() const;
 };
 
-LinkedList* LinkedList::getNext(){
+LinkedList* LinkedList::getNext() const{
     return next;    
 }
 
-int LinkedList::getValue(){
+int LinkedList::getValue() const{
+    // val = 10; // error: assignment of member ‘LinkedList::val’ in read-only object
     return val;
 }
 
-void LinkedList::print(){
+void LinkedList::print() const{
     cout << val << " ";
     if(next){
         next->print();  
@@ -290,7 +291,7 @@ void LinkedList::insert(int position, int num){
     }
 }
 
-int LinkedList::size(){
+int LinkedList::size() const{
     if(next){
         return next->size() + 1;
     }
@@ -352,11 +353,12 @@ int main()
     head->deleteNode(100, &head);
     head->print();
     
-    
+    const LinkedList* prt = new LinkedList(10);
+    // prt->append(20); //  error: passing ‘const LinkedList’ as ‘this’ argument discards qualifiers [-fpermissive]
+    //因为这里next（member variable）会试图被改变
     
     
 }
-
 
 ```
 # Result
