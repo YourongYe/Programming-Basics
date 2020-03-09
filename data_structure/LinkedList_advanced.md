@@ -79,7 +79,7 @@ void LinkedList<T>::deleteNode(T v, LinkedList** head){
     if(val==v){
         LinkedList* temp = *head;
         *head = next;
-        delete(temp); // 一定要记住删除掉的node要进行memory deallocation
+        delete temp; // 一定要记住删除掉的node要进行memory deallocation
         return;
     }
     if(!next){ //一定要注意遇到if后面跟的是next->val 的情况，应该首先要检测next是否为NULL
@@ -89,7 +89,7 @@ void LinkedList<T>::deleteNode(T v, LinkedList** head){
     else if(next->val==v){ 
         LinkedList* temp = next;
         next = next->next;
-        delete(temp);
+        delete temp;
         return;
     }
     else{
