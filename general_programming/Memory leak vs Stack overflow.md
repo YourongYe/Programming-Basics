@@ -23,9 +23,9 @@ Stack memory is fixed for a program, it will run out of stack memory when there 
 main以外的variable是global variable，所以会放在global section里
 
 # Heap
-Heap memory is not fixed in size, the program can claim as much heap memory as possible subject to the system memory.   
+Heap memory is **not fixed in size**, the program can claim as much heap memory as possible **subject to the system memory**.   
 
-Anything on the heap has to be accessed through a pointer on the stack
+**Anything on the heap has to be accessed through a pointer on the stack**
 
 Anything on the heap has to be **explicitly deallocated** by making a call to **free func** or by using **delete operator**.
 
