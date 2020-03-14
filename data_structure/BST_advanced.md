@@ -25,6 +25,7 @@ public:
     // void removeNode(BinaryTree** root, int v); // 如果不返回，则必须用double pointer
     BinaryTree* findMin(BinaryTree* node); // 任意给一个nodeprt，得到该节点之下的最小值的nodeprt，用于remove
     BinaryTree* findMin2(BinaryTree* node); //iteration version
+    void deleteTree(BinaryTree* root); // remove 整个tree
     
 };
 
@@ -34,6 +35,15 @@ BinaryTree::BinaryTree(int v){
 }
 
 BinaryTree::~BinaryTree() {} //这种简写形式不需要加；
+
+void BinaryTree::deleteTree(BinaryTree* root){ // postorderTraverse 适用于 delete the whole tree
+    if(root){
+        deleteTree(root->left);
+        deleteTree(root->right);
+        delete root;
+        root = NULL;
+    }
+}
 
 void BinaryTree::insert(int v){
     if(v<val){
@@ -179,9 +189,12 @@ int main(){
     cout << endl;
     head->inorderTraverse();
     // head = head->removeNode(head, 3);
-    
+    cout << endl;
+    head->deleteTree(head);
+    cout << ((head==NULL)? "yes":"no") << endl;
     
 }
+
 
 ```
 
@@ -195,5 +208,7 @@ min is: 1
 max is: 12                                                                                                              
 height is: 4                                                                                                            
 1 3 2 5 7 6 4 9 11 10 12 8                                                                                              
-1 2 3 4 5 6 7 8 9 10 11 12 16 17  
+1 2 3 4 5 6 7 8 9 10 11 12 16 17                                                                                        
+no                                                                                                                      
+    
 ```
