@@ -13,3 +13,5 @@ A Binary tree is Perfect Binary Tree in which all internal nodes have two childr
 ### Balanced Binary Tree
 A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.
 
+### AVL Tree
+An AVL tree is a **self-balancing** binary search tree, balanced to maintain O(log n) height. A B-tree is a balanced tree, but it is not a binary tree. Nodes have more children, which increases per-node search time but decreases the number of nodes the search needs to visit.
