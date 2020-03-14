@@ -1,3 +1,11 @@
+# When is destructor called?
+A destructor function is called automatically when the object goes out of scope:  
+(1) the function ends  
+(2) the program ends  
+(3) a block containing local variables ends  
+(4) a delete operator is called   
+
+# Example
 ```cpp
 #include <iostream>
 #include <string>
