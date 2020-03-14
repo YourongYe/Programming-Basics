@@ -212,3 +212,231 @@ height is: 4
 no                                                                                                                      
     
 ```
+
+# Template version
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+template<typename T>
+class BinaryTree {
+private: // member variables 最好都是private的；如果都是public则可直接用struct
+    T val; 
+    BinaryTree* left;
+    BinaryTree* right;
+public:
+    BinaryTree(T v);
+    ~BinaryTree(); // destructor
+    void insert(T); // 可以只写parameter的type，不写input name
+    void inorderTraverse();
+    void preorderTraverse();
+    void postorderTraverse();
+    int height(BinaryTree*); // 可以只写parameter的type，不写input name
+    T max();
+    T min();
+    bool find(T v); // binary search
+    BinaryTree* removeNode(BinaryTree* root, T v); // 删除节点，这里如果是传root的pointer，则必须要返回prt
+    // void removeNode(BinaryTree** root, int v); // 如果不返回，则必须用double pointer
+    BinaryTree* findMin(BinaryTree* node); // 任意给一个nodeprt，得到该节点之下的最小值的nodeprt，用于remove
+    BinaryTree* findMin2(BinaryTree* node); //iteration version
+    void deleteTree(BinaryTree* root); // remove 整个tree
+    
+};
+
+template<typename T>
+BinaryTree<T>::BinaryTree(T v){
+    val = v;
+    left = right = NULL; //赋值可以连写
+}
+
+template<typename T>
+BinaryTree<T>::~BinaryTree() {} //这种简写形式不需要加；
+
+template<typename T>
+void BinaryTree<T>::deleteTree(BinaryTree* root){ // postorderTraverse 适用于 delete the whole tree
+    if(root){
+        deleteTree(root->left);
+        deleteTree(root->right);
+        delete root;
+        root = NULL;
+    }
+}
+
+template<typename T>
+void BinaryTree<T>::insert(T v){
+    if(v<val){
+        if(left)
+            left->insert(v);
+        else
+            left = new BinaryTree(v);
+    }
+    else{
+        if(right)
+            right->insert(v);
+        else
+            right = new BinaryTree(v);
+    }
+}
+
+template<typename T>
+bool BinaryTree<T>::find(T v){
+    if(val==v)
+        return true;
+    else{
+        if(v<val){
+            if(left)
+                left->find(v);
+            else
+                return false;
+        }
+        else{
+            if(right)
+                right->find(v);
+            else
+                return false;
+        }
+    }
+}
+
+template<typename T>
+T BinaryTree<T>::max(){
+    if(!right)
+        return val;
+    return right->max();
+}
+
+template<typename T>
+T BinaryTree<T>::min(){
+    if(!left)
+        return val;
+    return left->min();
+}
+
+template<typename T>
+int BinaryTree<T>::height(BinaryTree* root){ // root必须要作为参数传入
+    if(!root)
+        return 0;
+    return std::max(1+height(root->left), 1+height(root->right)); //不能单独写left，虽然是member function，但只是为了能调用private variable
+}
+
+template<typename T>
+void BinaryTree<T>::preorderTraverse(){
+    cout << val << " ";
+    if(left) // 任何需要用left或right来call其他function的argument之前，都要先检验left是否为空
+        left->preorderTraverse();
+    if(right)
+        right->preorderTraverse();
+}
+
+template<typename T>
+void BinaryTree<T>::inorderTraverse(){
+    if(left)
+        left->inorderTraverse();
+    cout << val << " ";
+    if(right)
+        right->inorderTraverse();
+}
+
+template<typename T>
+void BinaryTree<T>::postorderTraverse(){
+    if(left)
+        left->postorderTraverse();
+    if(right)
+        right->postorderTraverse();
+    cout << val << " ";
+}
+
+template<typename T>
+BinaryTree<T>* BinaryTree<T>::findMin(BinaryTree<T>* node_prt){ //recursion
+    if(node_prt->left){
+        findMin(node_prt->left);
+    }
+    else{
+        return node_prt;
+    }
+}
+
+template<typename T>
+BinaryTree<T>* BinaryTree<T>::findMin2(BinaryTree<T>* node_prt){ // iteration
+    while(node_prt->left)
+        node_prt = node_prt->left;
+    return node_prt;
+}
+
+template<typename T>
+BinaryTree<T>* BinaryTree<T>::removeNode(BinaryTree<T>* root, T v){ // removeNode的逻辑和find类似，因为要先找到那个节点才能删除
+    if(!root) return root; //如果root为空，说明没有找到val=v的节点
+    else if(v<root->val) root->left = removeNode(root->left, v); // 在left tree里search，同时因为left tree之后会被改变，所以return新的left tree节点
+    else if(v>root->val) root->right = removeNode(root->right, v); //注意这里的写法和在main里call这个function是完全一致的，旧的prt作为传参，新的prt会被返回
+    else{ // val==v，以下为找到节点之后的三种情况
+        if(!root->left && root->right){ // case 1 （1）： 只有right child （直接用child来顶替，类似linked list）
+            BinaryTree* temp = root; // 先copy要删除的节点
+            root = root->right; // 把root prt和right child连上
+            delete temp; // 删除不要的节点
+        }
+        else if(!root->right && root->left){ // case 1 （2）: 只有left child
+            BinaryTree* temp = root;
+            root = root->left;
+            delete temp;
+        }
+        else if(!root->right && !root->left){ // case 2: 此节点为根节点（leaf） 
+            delete root; // 释放root指向的heap上的那块内存，root这个prt还存在在stack上
+            root = NULL; // 让root prt指向null
+        }
+        else{ // case 3: 有left child 和right child
+            BinaryTree* temp = findMin2(root->right);
+            root->val = temp->val;
+            root->right = removeNode(root->right, temp->val);
+        }
+    }
+    return root;
+}
+
+
+int main(){
+    BinaryTree<char>* head = new BinaryTree<char>('h');
+    char array[] = {'f','d','e','b','g','l','j','i','k','o','m','q'};
+    for(char character:array){
+        head->insert(character);
+    }
+    head->inorderTraverse();
+    cout << endl;
+    cout << (head->find('j')? "yes":"no") << endl;
+    cout << (head->find('p')? "yes":"no") << endl;
+    head->preorderTraverse();
+    cout << endl;
+    cout <<"min is: " << head->min() << endl;
+    cout << "max is: " << head->max() << endl;
+    cout << "height is: " << head->height(head) << endl;
+    head->postorderTraverse();
+    head->insert('n');
+    head->insert('p');
+    head->insert('r');
+    head = head->removeNode(head, 'q');
+    // head->removeNode(head, 5);
+    cout << endl;
+    head->inorderTraverse();
+    // head = head->removeNode(head, 3);
+    cout << endl;
+    head->deleteTree(head);
+    cout << ((head==NULL)? "yes":"no") << endl;
+    
+}
+
+```
+
+# Result
+```cpp
+b d e f g h i j k l m o q                                                                                               
+yes                                                                                                                     
+no                                                                                                                      
+h f d b e g l j i k o m q                                                                                               
+min is: b                                                                                                               
+max is: q                                                                                                               
+height is: 4                                                                                                            
+b e d g f i k j m q o l h                                                                                               
+b d e f g h i j k l m n o p r                                                                                           
+no 
+```
