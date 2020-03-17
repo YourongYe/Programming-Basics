@@ -11,6 +11,8 @@ A destructor function is called automatically when the object goes out of scope:
 object 的时候，就会出问题。即使此时我们的derived class是有destructor的，但是因为没有override，所以base class pointer依旧会call base class
 的 destructor，那么如果我们的derived class有新的member variable（相比base class），就没法被删除，就会出现memory leak
 
+https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors
+
 # Example
 ```cpp
 #include <iostream>
