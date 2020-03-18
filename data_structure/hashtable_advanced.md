@@ -1,4 +1,5 @@
 # Example
+https://medium.com/@aozturk/simple-hash-map-hash-table-implementation-in-c-931965904250
 ```cpp
 #include <iostream>
 #include <string>
